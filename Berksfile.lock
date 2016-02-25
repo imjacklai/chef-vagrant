@@ -2,6 +2,10 @@ DEPENDENCIES
   locale
     git: git://github.com/hw-cookbooks/locale.git
     revision: 82b365ba140fe303a5c137aa4a7cc1ad44791bf4
+  timezone-ii
+    git: git://github.com/L2G/timezone-ii.git
+    revision: 28c9e49c58c534e798cf01a77a9373c4c54f4587
 
 GRAPH
   locale (1.0.3)
+  timezone-ii (0.2.9992)

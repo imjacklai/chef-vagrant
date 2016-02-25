@@ -7,9 +7,11 @@
     "locale": {
       "lang": "en_US.utf8",
       "lc_all": "en_US.utf8"
-    }
+    },
+    "tz": "Asia/Taipei"
   },
   "run_list": [
-    "recipe[locale]"
+    "recipe[locale]",
+    "recipe[timezone-ii]"
   ]
 }
