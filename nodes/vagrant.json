@@ -220,6 +220,259 @@
         "base_path": "/srv/git",
         "export_all": true
       }
+    },
+    "apt": {
+      "cacher-client": {
+        "restrict_environment": false
+      },
+      "cacher_dir": "/var/cache/apt-cacher-ng",
+      "cacher_interface": null,
+      "cacher_port": 3142,
+      "cacher_ssl_support": false,
+      "caching_server": false,
+      "compiletime": false,
+      "compile_time_update": false,
+      "key_proxy": "",
+      "cache_bypass": {
+
+      },
+      "periodic_update_min_delay": 86400,
+      "launchpad_api_version": "1.0",
+      "unattended_upgrades": {
+        "enable": false,
+        "update_package_lists": true,
+        "allowed_origins": [
+          "Ubuntu trusty"
+        ],
+        "package_blacklist": [
+
+        ],
+        "auto_fix_interrupted_dpkg": false,
+        "minimal_steps": false,
+        "install_on_shutdown": false,
+        "mail": null,
+        "mail_only_on_error": true,
+        "remove_unused_dependencies": false,
+        "automatic_reboot": false,
+        "automatic_reboot_time": "now",
+        "dl_limit": null
+      },
+      "confd": {
+        "install_recommends": true,
+        "install_suggests": false
+      }
+    },
+    "java": {
+      "jdk_version": "7",
+      "arch": "x86_64",
+      "openjdk_packages": [
+        "openjdk-7-jdk",
+        "openjdk-7-jre-headless"
+      ],
+      "openjdk_version": null,
+      "accept_license_agreement": false,
+      "set_default": true,
+      "alternatives_priority": 1062,
+      "set_etc_environment": false,
+      "use_alt_suffix": true,
+      "reset_alternatives": true,
+      "ark_retries": 0,
+      "ark_retry_delay": 2,
+      "ark_timeout": 600,
+      "ark_download_timeout": 600,
+      "install_flavor": "oracle",
+      "oracle": {
+        "accept_oracle_download_terms": true,
+        "jce": {
+          "enabled": false,
+          "8": {
+            "url": "http://download.oracle.com/otn-pub/java/jce/8/jce_policy-8.zip",
+            "checksum": "f3020a3922efd6626c2fff45695d527f34a8020e938a49292561f18ad1320b59"
+          },
+          "7": {
+            "url": "http://download.oracle.com/otn-pub/java/jce/7/UnlimitedJCEPolicyJDK7.zip",
+            "checksum": "7a8d790e7bd9c2f82a83baddfae765797a4a56ea603c9150c87b7cdb7800194d"
+          },
+          "6": {
+            "url": "http://download.oracle.com/otn-pub/java/jce_policy/6/jce_policy-6.zip",
+            "checksum": "d0c2258c3364120b4dbf7dd1655c967eee7057ac6ae6334b5ea8ceb8bafb9262"
+          },
+          "home": "/opt/java_jce"
+        }
+      },
+      "jdk": {
+        "6": {
+          "bin_cmds": [
+            "appletviewer",
+            "apt",
+            "ControlPanel",
+            "extcheck",
+            "HtmlConverter",
+            "idlj",
+            "jar",
+            "jarsigner",
+            "java",
+            "javac",
+            "javadoc",
+            "javah",
+            "javap",
+            "javaws",
+            "jconsole",
+            "jcontrol",
+            "jdb",
+            "jhat",
+            "jinfo",
+            "jmap",
+            "jps",
+            "jrunscript",
+            "jsadebugd",
+            "jstack",
+            "jstat",
+            "jstatd",
+            "jvisualvm",
+            "keytool",
+            "native2ascii",
+            "orbd",
+            "pack200",
+            "policytool",
+            "rmic",
+            "rmid",
+            "rmiregistry",
+            "schemagen",
+            "serialver",
+            "servertool",
+            "tnameserv",
+            "unpack200",
+            "wsgen",
+            "wsimport",
+            "xjc"
+          ],
+          "x86_64": {
+            "url": "http://download.oracle.com/otn-pub/java/jdk/6u45-b06/jdk-6u45-linux-x64.bin",
+            "checksum": "6b493aeab16c940cae9e3d07ad2a5c5684fb49cf06c5d44c400c7993db0d12e8"
+          },
+          "i586": {
+            "url": "http://download.oracle.com/otn-pub/java/jdk/6u45-b06/jdk-6u45-linux-i586.bin",
+            "checksum": "d53b5a2518d80e1d95565f0adda54eee229dc5f4a1d1a3c2f7bf5045b168a357"
+          }
+        },
+        "7": {
+          "bin_cmds": [
+            "appletviewer",
+            "apt",
+            "ControlPanel",
+            "extcheck",
+            "idlj",
+            "jar",
+            "jarsigner",
+            "java",
+            "javac",
+            "javadoc",
+            "javafxpackager",
+            "javah",
+            "javap",
+            "javaws",
+            "jcmd",
+            "jconsole",
+            "jcontrol",
+            "jdb",
+            "jhat",
+            "jinfo",
+            "jmap",
+            "jps",
+            "jrunscript",
+            "jsadebugd",
+            "jstack",
+            "jstat",
+            "jstatd",
+            "jvisualvm",
+            "keytool",
+            "native2ascii",
+            "orbd",
+            "pack200",
+            "policytool",
+            "rmic",
+            "rmid",
+            "rmiregistry",
+            "schemagen",
+            "serialver",
+            "servertool",
+            "tnameserv",
+            "unpack200",
+            "wsgen",
+            "wsimport",
+            "xjc"
+          ],
+          "x86_64": {
+            "url": "http://download.oracle.com/otn-pub/java/jdk/7u75-b13/jdk-7u75-linux-x64.tar.gz",
+            "checksum": "6f1f81030a34f7a9c987f8b68a24d139"
+          },
+          "i586": {
+            "url": "http://download.oracle.com/otn-pub/java/jdk/7u75-b13/jdk-7u75-linux-i586.tar.gz",
+            "checksum": "e4371a4fddc049eca3bfef293d812b8e"
+          }
+        },
+        "8": {
+          "bin_cmds": [
+            "appletviewer",
+            "apt",
+            "ControlPanel",
+            "extcheck",
+            "idlj",
+            "jar",
+            "jarsigner",
+            "java",
+            "javac",
+            "javadoc",
+            "javafxpackager",
+            "javah",
+            "javap",
+            "javaws",
+            "jcmd",
+            "jconsole",
+            "jcontrol",
+            "jdb",
+            "jdeps",
+            "jhat",
+            "jinfo",
+            "jjs",
+            "jmap",
+            "jmc",
+            "jps",
+            "jrunscript",
+            "jsadebugd",
+            "jstack",
+            "jstat",
+            "jstatd",
+            "jvisualvm",
+            "keytool",
+            "native2ascii",
+            "orbd",
+            "pack200",
+            "policytool",
+            "rmic",
+            "rmid",
+            "rmiregistry",
+            "schemagen",
+            "serialver",
+            "servertool",
+            "tnameserv",
+            "unpack200",
+            "wsgen",
+            "wsimport",
+            "xjc"
+          ],
+          "x86_64": {
+            "url": "http://download.oracle.com/otn-pub/java/jdk/8u65-b17/jdk-8u65-linux-x64.tar.gz",
+            "checksum": "196880a42c45ec9ab2f00868d69619c0"
+          },
+          "i586": {
+            "url": "http://download.oracle.com/otn-pub/java/jdk/8u65-b17/jdk-8u65-linux-i586.tar.gz",
+            "checksum": "7b715e1fe2316c94aaa968b23ce49c9a"
+          }
+        }
+      },
+      "java_home": "/usr/lib/jvm/java-7-oracle-amd64"
     }
   },
   "automatic": {
@@ -263,23 +516,23 @@
         "free": "0kB"
       },
       "total": "2050008kB",
-      "free": "1341044kB",
-      "buffers": "32420kB",
-      "cached": "466104kB",
-      "active": "314492kB",
-      "inactive": "304264kB",
-      "dirty": "52kB",
+      "free": "1308616kB",
+      "buffers": "34216kB",
+      "cached": "492372kB",
+      "active": "326952kB",
+      "inactive": "319932kB",
+      "dirty": "56kB",
       "writeback": "0kB",
-      "anon_pages": "120244kB",
+      "anon_pages": "120316kB",
       "mapped": "12448kB",
-      "slab": "66720kB",
-      "slab_reclaimable": "57796kB",
-      "slab_unreclaim": "8924kB",
-      "page_tables": "3428kB",
+      "slab": "70864kB",
+      "slab_reclaimable": "61820kB",
+      "slab_unreclaim": "9044kB",
+      "page_tables": "3440kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "1025004kB",
-      "committed_as": "216924kB",
+      "committed_as": "216888kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "10312kB",
       "vmalloc_chunk": "34359722492kB"
@@ -622,15 +875,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "833906",
-              "packets": "1018",
+              "bytes": "1834479",
+              "packets": "2761",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "833906",
-              "packets": "1018",
+              "bytes": "1834479",
+              "packets": "2761",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -640,16 +893,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "1499051",
-              "packets": "24345",
+              "bytes": "1570094",
+              "packets": "25519",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "68973556",
-              "packets": "70533",
+              "bytes": "72601024",
+              "packets": "74320",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -658,16 +911,16 @@
           "eth1": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "562350",
-              "packets": "1824",
+              "bytes": "909519",
+              "packets": "2680",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "803270",
-              "packets": "2448",
+              "bytes": "1645671",
+              "packets": "3781",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -682,13 +935,13 @@
     "filesystem": {
       "/dev/sda1": {
         "kb_size": "41251136",
-        "kb_used": "1405104",
-        "kb_available": "38110120",
+        "kb_used": "1430160",
+        "kb_available": "38085064",
         "percent_used": "4%",
         "mount": "/",
         "total_inodes": "2621440",
-        "inodes_used": "85864",
-        "inodes_available": "2535576",
+        "inodes_used": "86837",
+        "inodes_available": "2534603",
         "inodes_percent_used": "4%",
         "fs_type": "ext4",
         "mount_options": [
@@ -749,8 +1002,8 @@
       },
       "vagrant": {
         "kb_size": "243915264",
-        "kb_used": "60354452",
-        "kb_available": "183560812",
+        "kb_used": "60408316",
+        "kb_available": "183506948",
         "percent_used": "25%",
         "mount": "/vagrant",
         "total_inodes": "1000",
@@ -975,12 +1228,12 @@
       "by_device": {
         "/dev/sda1": {
           "kb_size": "41251136",
-          "kb_used": "1405104",
-          "kb_available": "38110120",
+          "kb_used": "1430160",
+          "kb_available": "38085064",
           "percent_used": "4%",
           "total_inodes": "2621440",
-          "inodes_used": "85864",
-          "inodes_available": "2535576",
+          "inodes_used": "86837",
+          "inodes_available": "2534603",
           "inodes_percent_used": "4%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1060,8 +1313,8 @@
         },
         "vagrant": {
           "kb_size": "243915264",
-          "kb_used": "60354452",
-          "kb_available": "183560812",
+          "kb_used": "60408316",
+          "kb_available": "183506948",
           "percent_used": "25%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1164,12 +1417,12 @@
       "by_mountpoint": {
         "/": {
           "kb_size": "41251136",
-          "kb_used": "1405104",
-          "kb_available": "38110120",
+          "kb_used": "1430160",
+          "kb_available": "38085064",
           "percent_used": "4%",
           "total_inodes": "2621440",
-          "inodes_used": "85864",
-          "inodes_available": "2535576",
+          "inodes_used": "86837",
+          "inodes_available": "2534603",
           "inodes_percent_used": "4%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1305,8 +1558,8 @@
         },
         "/vagrant": {
           "kb_size": "243915264",
-          "kb_used": "60354452",
-          "kb_available": "183560812",
+          "kb_used": "60408316",
+          "kb_available": "183506948",
           "percent_used": "25%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1424,13 +1677,13 @@
         "/dev/sda1,/": {
           "device": "/dev/sda1",
           "kb_size": "41251136",
-          "kb_used": "1405104",
-          "kb_available": "38110120",
+          "kb_used": "1430160",
+          "kb_available": "38085064",
           "percent_used": "4%",
           "mount": "/",
           "total_inodes": "2621440",
-          "inodes_used": "85864",
-          "inodes_available": "2535576",
+          "inodes_used": "86837",
+          "inodes_available": "2534603",
           "inodes_percent_used": "4%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1554,8 +1807,8 @@
         "vagrant,/vagrant": {
           "device": "vagrant",
           "kb_size": "243915264",
-          "kb_used": "60354452",
-          "kb_available": "183560812",
+          "kb_used": "60408316",
+          "kb_available": "183506948",
           "percent_used": "25%",
           "mount": "/vagrant",
           "total_inodes": "1000",
@@ -1845,11 +2098,11 @@
         "chef_root": "/opt/chef/embedded/lib/ruby/gems/2.1.0/gems/chef-12.7.2/lib"
       }
     },
-    "ohai_time": 1456412982.987842,
-    "uptime_seconds": 2348,
-    "uptime": "39 minutes 08 seconds",
-    "idletime_seconds": 2305,
-    "idletime": "38 minutes 25 seconds",
+    "ohai_time": 1456413102.0547924,
+    "uptime_seconds": 2467,
+    "uptime": "41 minutes 07 seconds",
+    "idletime_seconds": 2418,
+    "idletime": "40 minutes 18 seconds",
     "init_package": "init",
     "cloud_v2": null,
     "command": {
@@ -2419,15 +2672,22 @@
       "sudo::default",
       "users::sysadmins",
       "git::default",
+      "java",
+      "java::default",
       "timezone-ii::debian",
-      "git::package"
+      "git::package",
+      "java::set_attributes_from_version",
+      "java::oracle",
+      "java::set_java_home",
+      "java::default_java_symlink"
     ],
     "expanded_run_list": [
       "locale::default",
       "timezone-ii::default",
       "sudo::default",
       "users::sysadmins",
-      "git::default"
+      "git::default",
+      "java::default"
     ],
     "roles": [
       "system"
@@ -2448,6 +2708,9 @@
       "git": {
         "version": "4.3.7"
       },
+      "java": {
+        "version": "1.39.0"
+      },
       "build-essential": {
         "version": "2.3.1"
       },
@@ -2459,6 +2722,9 @@
       },
       "yum-epel": {
         "version": "0.6.5"
+      },
+      "apt": {
+        "version": "2.9.2"
       },
       "7-zip": {
         "version": "1.0.2"

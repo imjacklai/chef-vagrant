@@ -15,6 +15,13 @@
         "users": ["vagrant", "deployer"],
         "passwordless": true
       }
+    },
+    "java": {
+      "install_flavor": "oracle",
+      "jdk_version": "7",
+      "oracle": {
+        "accept_oracle_download_terms": true
+      }
     }
   },
   "run_list": [
@@ -22,6 +29,7 @@
     "recipe[timezone-ii]",
     "recipe[sudo]",
     "recipe[users::sysadmins]",
-    "recipe[git::default]"
+    "recipe[git::default]",
+    "recipe[java]"
   ]
 }
