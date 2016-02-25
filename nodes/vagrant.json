@@ -1,5 +1,10 @@
 {
   "name": "vagrant",
+  "override": {
+    "nodejs": {
+      "install_method": "source"
+    }
+  },
   "normal": {
     "knife_zero": {
       "host": "192.168.33.10"
@@ -473,6 +478,75 @@
         }
       },
       "java_home": "/usr/lib/jvm/java-7-oracle-amd64"
+    },
+    "seven_zip": {
+      "url": "http://www.7-zip.org/a/7z1514-x64.msi",
+      "checksum": "cefe1a9092d8a6be68468c33910d6206b40e934fb63cab686c5cccf369fbf712",
+      "package_name": "7-Zip 15.14 (x64 edition)"
+    },
+    "ark": {
+      "apache_mirror": "http://apache.mirrors.tds.net",
+      "prefix_root": "/usr/local",
+      "prefix_bin": "/usr/local/bin",
+      "prefix_home": "/usr/local",
+      "tar": "/bin/tar",
+      "package_dependencies": [
+        "libtool",
+        "autoconf",
+        "make",
+        "unzip",
+        "rsync",
+        "gcc",
+        "autogen",
+        "shtool",
+        "pkg-config"
+      ]
+    },
+    "homebrew": {
+      "owner": null,
+      "auto-update": true,
+      "casks": [
+
+      ],
+      "formulas": [
+
+      ],
+      "taps": [
+
+      ]
+    },
+    "nodejs": {
+      "install_method": "source",
+      "engine": "node",
+      "version": "4.3.1",
+      "prefix_url": {
+        "node": "https://nodejs.org/dist/",
+        "iojs": "https://iojs.org/dist/"
+      },
+      "source": {
+        "url": null,
+        "checksum": "61e2d58e861b6c9dbf0ac7624b718198cbd59b88a9de31a39a05de95a32eee73"
+      },
+      "binary": {
+        "url": null,
+        "checksum": {
+          "linux_x64": "305bf2983c65edea6dd2c9f3669b956251af03523d31cf0a0471504fd5920aac",
+          "linux_x86": "8fa2d952556c8b5aa37c077e2735c972c522510facaa4df76d4244be88f4dc0f",
+          "linux_arm-pi": "52a0f6ed9c0be1ea5f79de6527c481c1b803edbea6413a4fdc65a45ad401565d"
+        }
+      },
+      "make_threads": 1,
+      "npm": {
+        "install_method": "source",
+        "version": "latest"
+      },
+      "install_repo": true,
+      "repo": "https://deb.nodesource.com/node",
+      "keyserver": "keyserver.ubuntu.com",
+      "key": "1655a0ab68576280",
+      "packages": [
+        "nodejs"
+      ]
     }
   },
   "automatic": {
@@ -490,6 +564,17 @@
       "perl": {
         "version": "5.18.2",
         "archname": "x86_64-linux-gnu-thread-multi"
+      },
+      "java": {
+        "version": "1.7.0_75",
+        "runtime": {
+          "name": "Java(TM) SE Runtime Environment",
+          "build": "1.7.0_75-b13"
+        },
+        "hotspot": {
+          "name": "Java HotSpot(TM) 64-Bit Server VM",
+          "build": "24.75-b04, mixed mode"
+        }
       },
       "ruby": {
         "platform": "x86_64-linux",
@@ -516,23 +601,23 @@
         "free": "0kB"
       },
       "total": "2050008kB",
-      "free": "1308616kB",
-      "buffers": "34216kB",
-      "cached": "492372kB",
-      "active": "326952kB",
-      "inactive": "319932kB",
-      "dirty": "56kB",
+      "free": "858808kB",
+      "buffers": "36276kB",
+      "cached": "926708kB",
+      "active": "576132kB",
+      "inactive": "505800kB",
+      "dirty": "84kB",
       "writeback": "0kB",
-      "anon_pages": "120316kB",
-      "mapped": "12448kB",
-      "slab": "70864kB",
-      "slab_reclaimable": "61820kB",
-      "slab_unreclaim": "9044kB",
-      "page_tables": "3440kB",
+      "anon_pages": "118944kB",
+      "mapped": "12488kB",
+      "slab": "85900kB",
+      "slab_reclaimable": "76556kB",
+      "slab_unreclaim": "9344kB",
+      "page_tables": "3464kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "1025004kB",
-      "committed_as": "216888kB",
+      "committed_as": "216880kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "10312kB",
       "vmalloc_chunk": "34359722492kB"
@@ -875,15 +960,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "1834479",
-              "packets": "2761",
+              "bytes": "2716950",
+              "packets": "3620",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "1834479",
-              "packets": "2761",
+              "bytes": "2716950",
+              "packets": "3620",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -893,16 +978,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "1570094",
-              "packets": "25519",
+              "bytes": "5002733",
+              "packets": "82699",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "72601024",
-              "packets": "74320",
+              "bytes": "223301851",
+              "packets": "230710",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -911,16 +996,16 @@
           "eth1": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "909519",
-              "packets": "2680",
+              "bytes": "1259619",
+              "packets": "3911",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "1645671",
-              "packets": "3781",
+              "bytes": "2469309",
+              "packets": "5399",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -935,13 +1020,13 @@
     "filesystem": {
       "/dev/sda1": {
         "kb_size": "41251136",
-        "kb_used": "1430160",
-        "kb_available": "38085064",
-        "percent_used": "4%",
+        "kb_used": "1860660",
+        "kb_available": "37654564",
+        "percent_used": "5%",
         "mount": "/",
         "total_inodes": "2621440",
-        "inodes_used": "86837",
-        "inodes_available": "2534603",
+        "inodes_used": "89144",
+        "inodes_available": "2532296",
         "inodes_percent_used": "4%",
         "fs_type": "ext4",
         "mount_options": [
@@ -1002,8 +1087,8 @@
       },
       "vagrant": {
         "kb_size": "243915264",
-        "kb_used": "60408316",
-        "kb_available": "183506948",
+        "kb_used": "60851632",
+        "kb_available": "183063632",
         "percent_used": "25%",
         "mount": "/vagrant",
         "total_inodes": "1000",
@@ -1228,12 +1313,12 @@
       "by_device": {
         "/dev/sda1": {
           "kb_size": "41251136",
-          "kb_used": "1430160",
-          "kb_available": "38085064",
-          "percent_used": "4%",
+          "kb_used": "1860660",
+          "kb_available": "37654564",
+          "percent_used": "5%",
           "total_inodes": "2621440",
-          "inodes_used": "86837",
-          "inodes_available": "2534603",
+          "inodes_used": "89144",
+          "inodes_available": "2532296",
           "inodes_percent_used": "4%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1313,8 +1398,8 @@
         },
         "vagrant": {
           "kb_size": "243915264",
-          "kb_used": "60408316",
-          "kb_available": "183506948",
+          "kb_used": "60852004",
+          "kb_available": "183063260",
           "percent_used": "25%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1417,12 +1502,12 @@
       "by_mountpoint": {
         "/": {
           "kb_size": "41251136",
-          "kb_used": "1430160",
-          "kb_available": "38085064",
-          "percent_used": "4%",
+          "kb_used": "1860660",
+          "kb_available": "37654564",
+          "percent_used": "5%",
           "total_inodes": "2621440",
-          "inodes_used": "86837",
-          "inodes_available": "2534603",
+          "inodes_used": "89144",
+          "inodes_available": "2532296",
           "inodes_percent_used": "4%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1558,8 +1643,8 @@
         },
         "/vagrant": {
           "kb_size": "243915264",
-          "kb_used": "60408316",
-          "kb_available": "183506948",
+          "kb_used": "60852004",
+          "kb_available": "183063260",
           "percent_used": "25%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1677,13 +1762,13 @@
         "/dev/sda1,/": {
           "device": "/dev/sda1",
           "kb_size": "41251136",
-          "kb_used": "1430160",
-          "kb_available": "38085064",
-          "percent_used": "4%",
+          "kb_used": "1860660",
+          "kb_available": "37654564",
+          "percent_used": "5%",
           "mount": "/",
           "total_inodes": "2621440",
-          "inodes_used": "86837",
-          "inodes_available": "2534603",
+          "inodes_used": "89144",
+          "inodes_available": "2532296",
           "inodes_percent_used": "4%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1807,8 +1892,8 @@
         "vagrant,/vagrant": {
           "device": "vagrant",
           "kb_size": "243915264",
-          "kb_used": "60408316",
-          "kb_available": "183506948",
+          "kb_used": "60852004",
+          "kb_available": "183063260",
           "percent_used": "25%",
           "mount": "/vagrant",
           "total_inodes": "1000",
@@ -2098,11 +2183,11 @@
         "chef_root": "/opt/chef/embedded/lib/ruby/gems/2.1.0/gems/chef-12.7.2/lib"
       }
     },
-    "ohai_time": 1456413102.0547924,
-    "uptime_seconds": 2467,
-    "uptime": "41 minutes 07 seconds",
-    "idletime_seconds": 2418,
-    "idletime": "40 minutes 18 seconds",
+    "ohai_time": 1456414379.9339201,
+    "uptime_seconds": 3745,
+    "uptime": "1 hours 02 minutes 25 seconds",
+    "idletime_seconds": 3681,
+    "idletime": "1 hours 01 minutes 21 seconds",
     "init_package": "init",
     "cloud_v2": null,
     "command": {
@@ -2674,12 +2759,17 @@
       "git::default",
       "java",
       "java::default",
+      "nodejs::nodejs",
       "timezone-ii::debian",
       "git::package",
       "java::set_attributes_from_version",
       "java::oracle",
       "java::set_java_home",
-      "java::default_java_symlink"
+      "java::default_java_symlink",
+      "nodejs::install",
+      "nodejs::nodejs_from_source",
+      "build-essential::default",
+      "build-essential::_debian"
     ],
     "expanded_run_list": [
       "locale::default",
@@ -2687,7 +2777,8 @@
       "sudo::default",
       "users::sysadmins",
       "git::default",
-      "java::default"
+      "java::default",
+      "nodejs::nodejs"
     ],
     "roles": [
       "system"
@@ -2711,6 +2802,9 @@
       "java": {
         "version": "1.39.0"
       },
+      "nodejs": {
+        "version": "2.4.5"
+      },
       "build-essential": {
         "version": "2.3.1"
       },
@@ -2726,6 +2820,12 @@
       "apt": {
         "version": "2.9.2"
       },
+      "ark": {
+        "version": "1.0.1"
+      },
+      "homebrew": {
+        "version": "2.0.5"
+      },
       "7-zip": {
         "version": "1.0.2"
       },
@@ -2734,6 +2834,9 @@
       },
       "yum": {
         "version": "3.10.0"
+      },
+      "seven_zip": {
+        "version": "2.0.0"
       }
     }
   },

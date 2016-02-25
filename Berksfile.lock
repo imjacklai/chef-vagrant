@@ -8,6 +8,9 @@ DEPENDENCIES
   locale
     git: git://github.com/hw-cookbooks/locale.git
     revision: 82b365ba140fe303a5c137aa4a7cc1ad44791bf4
+  nodejs
+    git: git://github.com/redguide/nodejs.git
+    revision: ec7d9df5c1a8cff1b10c4c047dc9233b33f24e19
   sudo
     git: git://github.com/chef-cookbooks/sudo.git
     revision: 001ed2b784faa9c61be0c8a0ec45cfe3e11187ca
@@ -22,6 +25,10 @@ GRAPH
   7-zip (1.0.2)
     windows (>= 1.2.2)
   apt (2.9.2)
+  ark (1.0.1)
+    build-essential (>= 0.0.0)
+    seven_zip (>= 0.0.0)
+    windows (>= 0.0.0)
   build-essential (2.3.1)
     7-zip (>= 0.0.0)
   chef_handler (1.3.0)
@@ -31,9 +38,19 @@ GRAPH
     dmg (>= 0.0.0)
     windows (>= 0.0.0)
     yum-epel (>= 0.0.0)
+  homebrew (2.0.5)
+    build-essential (>= 2.1.2)
   java (1.39.0)
     apt (>= 0.0.0)
   locale (1.0.3)
+  nodejs (2.4.5)
+    apt (>= 0.0.0)
+    ark (>= 0.0.0)
+    build-essential (>= 0.0.0)
+    homebrew (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  seven_zip (2.0.0)
+    windows (>= 1.2.2)
   sudo (2.9.0)
   timezone-ii (0.2.9992)
   users (2.0.3)
