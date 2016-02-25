@@ -8,6 +8,7 @@ cookbook_path [
 knife[:ssh_attribute] = "knife_zero.host"
 knife[:ssh_user] = "vagrant"
 knife[:use_sudo] = true
+knife[:editor] = "vim"
 # knife[:identity_file] = "PATH_TO_YOUR_PRIVATE_KEY"
 
 knife[:before_bootstrap] = "berks vendor cookbooks"

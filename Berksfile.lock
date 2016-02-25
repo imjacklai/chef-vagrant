@@ -1,0 +1,7 @@
+DEPENDENCIES
+  locale
+    git: git://github.com/hw-cookbooks/locale.git
+    revision: 82b365ba140fe303a5c137aa4a7cc1ad44791bf4
+
+GRAPH
+  locale (1.0.3)
