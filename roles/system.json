@@ -8,10 +8,19 @@
       "lang": "en_US.utf8",
       "lc_all": "en_US.utf8"
     },
-    "tz": "Asia/Taipei"
+    "tz": "Asia/Taipei",
+    "authorization": {
+      "sudo": {
+        "groups": ["sysadmin"],
+        "users": ["vagrant", "deployer"],
+        "passwordless": true
+      }
+    }
   },
   "run_list": [
     "recipe[locale]",
-    "recipe[timezone-ii]"
+    "recipe[timezone-ii]",
+    "recipe[sudo]",
+    "recipe[users::sysadmins]"
   ]
 }

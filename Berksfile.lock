@@ -2,10 +2,18 @@ DEPENDENCIES
   locale
     git: git://github.com/hw-cookbooks/locale.git
     revision: 82b365ba140fe303a5c137aa4a7cc1ad44791bf4
+  sudo
+    git: git://github.com/chef-cookbooks/sudo.git
+    revision: 001ed2b784faa9c61be0c8a0ec45cfe3e11187ca
   timezone-ii
     git: git://github.com/L2G/timezone-ii.git
     revision: 28c9e49c58c534e798cf01a77a9373c4c54f4587
+  users
+    git: git://github.com/chef-cookbooks/users.git
+    revision: 453bfa9d9f6dea165182ca170fbc00fb26568c03
 
 GRAPH
   locale (1.0.3)
+  sudo (2.9.0)
   timezone-ii (0.2.9992)
+  users (2.0.3)
