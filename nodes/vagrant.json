@@ -46,6 +46,180 @@
         ],
         "prefix": "/etc"
       }
+    },
+    "chef_handler": {
+      "handler_path": "/var/chef/handlers"
+    },
+    "windows": {
+      "allow_pending_reboots": true,
+      "allow_reboot_on_failure": false,
+      "rubyzipversion": null,
+      "reboot_timeout": 60
+    },
+    "7-zip": {
+      "url": "http://downloads.sourceforge.net/sevenzip/7z922-x64.msi",
+      "checksum": "f09bf515289eea45185a4cc673e3bbc18ce608c55b4cf96e77833435c9cdf3dc",
+      "package_name": "7-Zip 9.22 (x64 edition)",
+      "home": "\\7-zip"
+    },
+    "build-essential": {
+      "compile_time": false,
+      "msys": {
+        "path": "\\msys"
+      }
+    },
+    "dmg": {
+      "base_dir": "/Applications",
+      "cache_dir": "/var/chef/cache"
+    },
+    "yum": {
+      "main": {
+        "cachedir": "/var/cache/yum/$basearch/$releasever",
+        "distroverpkg": "ubuntu-release",
+        "alwaysprompt": null,
+        "assumeyes": null,
+        "bandwidth": null,
+        "bugtracker_url": null,
+        "clean_requirements_on_remove": null,
+        "color": null,
+        "color_list_available_downgrade": null,
+        "color_list_available_install": null,
+        "color_list_available_reinstall": null,
+        "color_list_available_upgrade": null,
+        "color_list_installed_extra": null,
+        "color_list_installed_newer": null,
+        "color_list_installed_older": null,
+        "color_list_installed_reinstall": null,
+        "color_search_match": null,
+        "color_update_installed": null,
+        "color_update_local": null,
+        "color_update_remote": null,
+        "commands": null,
+        "deltarpm": null,
+        "debuglevel": null,
+        "diskspacecheck": null,
+        "enable_group_conditionals": null,
+        "errorlevel": null,
+        "exactarch": null,
+        "exclude": null,
+        "gpgcheck": true,
+        "group_package_types": null,
+        "groupremove_leaf_only": null,
+        "history_list_view": null,
+        "history_record": null,
+        "history_record_packages": null,
+        "http_caching": null,
+        "installonly_limit": null,
+        "installonlypkgs": null,
+        "installroot": null,
+        "keepalive": null,
+        "keepcache": false,
+        "kernelpkgnames": null,
+        "localpkg_gpgcheck": false,
+        "logfile": "/var/log/yum.log",
+        "max_retries": null,
+        "mdpolicy": null,
+        "metadata_expire": null,
+        "mirrorlist_expire": null,
+        "multilib_policy": null,
+        "obsoletes": null,
+        "overwrite_groups": null,
+        "password": null,
+        "path": "/etc/yum.conf",
+        "persistdir": null,
+        "pluginconfpath": null,
+        "pluginpath": null,
+        "plugins": null,
+        "protected_multilib": null,
+        "protected_packages": null,
+        "proxy": null,
+        "proxy_password": null,
+        "proxy_username": null,
+        "recent": null,
+        "releasever": null,
+        "repo_gpgcheck": null,
+        "reposdir": null,
+        "reset_nice": null,
+        "rpmverbosity": null,
+        "showdupesfromrepos": null,
+        "skip_broken": null,
+        "ssl_check_cert_permissions": null,
+        "sslcacert": null,
+        "sslclientcert": null,
+        "sslclientkey": null,
+        "sslverify": null,
+        "syslog_device": null,
+        "syslog_facility": null,
+        "syslog_ident": null,
+        "throttle": null,
+        "timeout": null,
+        "tolerant": false,
+        "tsflags": null,
+        "username": null
+      },
+      "epel-debuginfo": {
+        "repositoryid": "epel-debuginfo",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false
+      },
+      "epel-source": {
+        "repositoryid": "epel-source",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false
+      },
+      "epel-testing-debuginfo": {
+        "repositoryid": "epel-testing-debuginfo",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false
+      },
+      "epel-testing-source": {
+        "repositoryid": "epel-testing-source",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false
+      },
+      "epel-testing": {
+        "repositoryid": "epel-testing",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false
+      },
+      "epel": {
+        "repositoryid": "epel",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": true,
+        "managed": true
+      }
+    },
+    "yum-epel": {
+      "repositories": [
+        "epel",
+        "epel-debuginfo",
+        "epel-source",
+        "epel-testing",
+        "epel-testing-debuginfo",
+        "epel-testing-source"
+      ]
+    },
+    "git": {
+      "prefix": "/usr/local",
+      "version": "1.9.5",
+      "url": "https://nodeload.github.com/git/git/tar.gz/v%{version}",
+      "checksum": "0f30984828d573da01d9f8e78210d5f4c56da1697fd6d278bad4cfa4c22ba271",
+      "use_pcre": false,
+      "server": {
+        "base_path": "/srv/git",
+        "export_all": true
+      }
     }
   },
   "automatic": {
@@ -89,23 +263,23 @@
         "free": "0kB"
       },
       "total": "2050008kB",
-      "free": "1342296kB",
-      "buffers": "32128kB",
-      "cached": "465696kB",
-      "active": "313656kB",
-      "inactive": "304028kB",
-      "dirty": "16kB",
+      "free": "1341044kB",
+      "buffers": "32420kB",
+      "cached": "466104kB",
+      "active": "314492kB",
+      "inactive": "304264kB",
+      "dirty": "52kB",
       "writeback": "0kB",
-      "anon_pages": "119860kB",
-      "mapped": "12444kB",
-      "slab": "66620kB",
-      "slab_reclaimable": "57716kB",
-      "slab_unreclaim": "8904kB",
-      "page_tables": "3484kB",
+      "anon_pages": "120244kB",
+      "mapped": "12448kB",
+      "slab": "66720kB",
+      "slab_reclaimable": "57796kB",
+      "slab_unreclaim": "8924kB",
+      "page_tables": "3428kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "1025004kB",
-      "committed_as": "216788kB",
+      "committed_as": "216924kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "10312kB",
       "vmalloc_chunk": "34359722492kB"
@@ -448,15 +622,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "502426",
-              "packets": "587",
+              "bytes": "833906",
+              "packets": "1018",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "502426",
-              "packets": "587",
+              "bytes": "833906",
+              "packets": "1018",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -466,16 +640,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "1497694",
-              "packets": "24326",
+              "bytes": "1499051",
+              "packets": "24345",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "68971149",
-              "packets": "70514",
+              "bytes": "68973556",
+              "packets": "70533",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -484,16 +658,16 @@
           "eth1": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "402323",
-              "packets": "1341",
+              "bytes": "562350",
+              "packets": "1824",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "503723",
-              "packets": "1790",
+              "bytes": "803270",
+              "packets": "2448",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -508,13 +682,13 @@
     "filesystem": {
       "/dev/sda1": {
         "kb_size": "41251136",
-        "kb_used": "1404808",
-        "kb_available": "38110416",
+        "kb_used": "1405104",
+        "kb_available": "38110120",
         "percent_used": "4%",
         "mount": "/",
         "total_inodes": "2621440",
-        "inodes_used": "85807",
-        "inodes_available": "2535633",
+        "inodes_used": "85864",
+        "inodes_available": "2535576",
         "inodes_percent_used": "4%",
         "fs_type": "ext4",
         "mount_options": [
@@ -575,8 +749,8 @@
       },
       "vagrant": {
         "kb_size": "243915264",
-        "kb_used": "60348624",
-        "kb_available": "183566640",
+        "kb_used": "60354452",
+        "kb_available": "183560812",
         "percent_used": "25%",
         "mount": "/vagrant",
         "total_inodes": "1000",
@@ -801,12 +975,12 @@
       "by_device": {
         "/dev/sda1": {
           "kb_size": "41251136",
-          "kb_used": "1404808",
-          "kb_available": "38110416",
+          "kb_used": "1405104",
+          "kb_available": "38110120",
           "percent_used": "4%",
           "total_inodes": "2621440",
-          "inodes_used": "85807",
-          "inodes_available": "2535633",
+          "inodes_used": "85864",
+          "inodes_available": "2535576",
           "inodes_percent_used": "4%",
           "fs_type": "ext4",
           "mount_options": [
@@ -886,8 +1060,8 @@
         },
         "vagrant": {
           "kb_size": "243915264",
-          "kb_used": "60348624",
-          "kb_available": "183566640",
+          "kb_used": "60354452",
+          "kb_available": "183560812",
           "percent_used": "25%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -990,12 +1164,12 @@
       "by_mountpoint": {
         "/": {
           "kb_size": "41251136",
-          "kb_used": "1404808",
-          "kb_available": "38110416",
+          "kb_used": "1405104",
+          "kb_available": "38110120",
           "percent_used": "4%",
           "total_inodes": "2621440",
-          "inodes_used": "85807",
-          "inodes_available": "2535633",
+          "inodes_used": "85864",
+          "inodes_available": "2535576",
           "inodes_percent_used": "4%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1131,8 +1305,8 @@
         },
         "/vagrant": {
           "kb_size": "243915264",
-          "kb_used": "60348624",
-          "kb_available": "183566640",
+          "kb_used": "60354452",
+          "kb_available": "183560812",
           "percent_used": "25%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1250,13 +1424,13 @@
         "/dev/sda1,/": {
           "device": "/dev/sda1",
           "kb_size": "41251136",
-          "kb_used": "1404808",
-          "kb_available": "38110416",
+          "kb_used": "1405104",
+          "kb_available": "38110120",
           "percent_used": "4%",
           "mount": "/",
           "total_inodes": "2621440",
-          "inodes_used": "85807",
-          "inodes_available": "2535633",
+          "inodes_used": "85864",
+          "inodes_available": "2535576",
           "inodes_percent_used": "4%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1380,8 +1554,8 @@
         "vagrant,/vagrant": {
           "device": "vagrant",
           "kb_size": "243915264",
-          "kb_used": "60348624",
-          "kb_available": "183566640",
+          "kb_used": "60354452",
+          "kb_available": "183560812",
           "percent_used": "25%",
           "mount": "/vagrant",
           "total_inodes": "1000",
@@ -1671,11 +1845,11 @@
         "chef_root": "/opt/chef/embedded/lib/ruby/gems/2.1.0/gems/chef-12.7.2/lib"
       }
     },
-    "ohai_time": 1456412636.6216943,
-    "uptime_seconds": 2002,
-    "uptime": "33 minutes 22 seconds",
-    "idletime_seconds": 1961,
-    "idletime": "32 minutes 41 seconds",
+    "ohai_time": 1456412982.987842,
+    "uptime_seconds": 2348,
+    "uptime": "39 minutes 08 seconds",
+    "idletime_seconds": 2305,
+    "idletime": "38 minutes 25 seconds",
     "init_package": "init",
     "cloud_v2": null,
     "command": {
@@ -1882,6 +2056,13 @@
           "uid": 1001,
           "shell": "/bin/bash",
           "gecos": "Ubuntu"
+        },
+        "deployer": {
+          "dir": "/home/deployer",
+          "gid": 1002,
+          "uid": 1002,
+          "shell": "/bin/bash",
+          "gecos": ""
         }
       },
       "group": {
@@ -2203,6 +2384,18 @@
           "members": [
 
           ]
+        },
+        "deployer": {
+          "gid": 1002,
+          "members": [
+
+          ]
+        },
+        "sysadmin": {
+          "gid": 2300,
+          "members": [
+            "deployer"
+          ]
         }
       }
     },
@@ -2225,13 +2418,16 @@
       "sudo",
       "sudo::default",
       "users::sysadmins",
-      "timezone-ii::debian"
+      "git::default",
+      "timezone-ii::debian",
+      "git::package"
     ],
     "expanded_run_list": [
       "locale::default",
       "timezone-ii::default",
       "sudo::default",
-      "users::sysadmins"
+      "users::sysadmins",
+      "git::default"
     ],
     "roles": [
       "system"
@@ -2248,6 +2444,30 @@
       },
       "users": {
         "version": "2.0.3"
+      },
+      "git": {
+        "version": "4.3.7"
+      },
+      "build-essential": {
+        "version": "2.3.1"
+      },
+      "dmg": {
+        "version": "2.3.0"
+      },
+      "windows": {
+        "version": "1.39.1"
+      },
+      "yum-epel": {
+        "version": "0.6.5"
+      },
+      "7-zip": {
+        "version": "1.0.2"
+      },
+      "chef_handler": {
+        "version": "1.3.0"
+      },
+      "yum": {
+        "version": "3.10.0"
       }
     }
   },

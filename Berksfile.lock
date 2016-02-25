@@ -1,4 +1,7 @@
 DEPENDENCIES
+  git
+    git: git://github.com/chef-cookbooks/git.git
+    revision: 1a564cb76e0d8f9587ca84bf40131f95e907d81a
   locale
     git: git://github.com/hw-cookbooks/locale.git
     revision: 82b365ba140fe303a5c137aa4a7cc1ad44791bf4
@@ -13,7 +16,23 @@ DEPENDENCIES
     revision: 453bfa9d9f6dea165182ca170fbc00fb26568c03
 
 GRAPH
+  7-zip (1.0.2)
+    windows (>= 1.2.2)
+  build-essential (2.3.1)
+    7-zip (>= 0.0.0)
+  chef_handler (1.3.0)
+  dmg (2.3.0)
+  git (4.3.7)
+    build-essential (>= 0.0.0)
+    dmg (>= 0.0.0)
+    windows (>= 0.0.0)
+    yum-epel (>= 0.0.0)
   locale (1.0.3)
   sudo (2.9.0)
   timezone-ii (0.2.9992)
   users (2.0.3)
+  windows (1.39.1)
+    chef_handler (>= 0.0.0)
+  yum (3.10.0)
+  yum-epel (0.6.5)
+    yum (~> 3.2)

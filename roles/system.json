@@ -21,6 +21,7 @@
     "recipe[locale]",
     "recipe[timezone-ii]",
     "recipe[sudo]",
-    "recipe[users::sysadmins]"
+    "recipe[users::sysadmins]",
+    "recipe[git::default]"
   ]
 }
