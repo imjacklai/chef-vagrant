@@ -52,6 +52,9 @@
           "port": "6379"
         }
       ]
+    },
+    "firewall": {
+      "state": "[{\"http\"=>{\"port\"=>\"80\"}}]"
     }
   },
   "default": {
@@ -92,6 +95,56 @@
         ],
         "prefix": "/etc"
       }
+    },
+    "firewall": {
+      "allow_ssh": false,
+      "allow_winrm": false,
+      "allow_mosh": false,
+      "firewalld": {
+        "permanent": false
+      },
+      "iptables": {
+        "defaults": {
+          "policy": {
+            "input": "DROP",
+            "forward": "DROP",
+            "output": "ACCEPT"
+          },
+          "ruleset": {
+            "*filter": 1,
+            ":INPUT DROP": 2,
+            ":FORWARD DROP": 3,
+            ":OUTPUT ACCEPT": 4,
+            "COMMIT_FILTER": 100
+          }
+        }
+      },
+      "ubuntu_iptables": false,
+      "redhat7_iptables": false,
+      "allow_established": true,
+      "ipv6_enabled": true,
+      "ufw": {
+        "defaults": {
+          "ipv6": "yes",
+          "manage_builtins": "no",
+          "ipt_sysctl": "/etc/ufw/sysctl.conf",
+          "ipt_modules": "nf_conntrack_ftp nf_nat_ftp nf_conntrack_netbios_ns",
+          "policy": {
+            "input": "DROP",
+            "output": "ACCEPT",
+            "forward": "DROP",
+            "application": "SKIP"
+          }
+        }
+      },
+      "rules": [
+        {
+          "http": {
+            "port": "80"
+          }
+        }
+      ],
+      "securitylevel": ""
     },
     "chef_handler": {
       "handler_path": "/var/chef/handlers"
@@ -833,26 +886,26 @@
         "free": "0kB"
       },
       "total": "2050008",
-      "free": "708444kB",
-      "buffers": "76568kB",
-      "cached": "968032kB",
-      "active": "528632kB",
-      "inactive": "636756kB",
-      "dirty": "48kB",
+      "free": "450156kB",
+      "buffers": "119816kB",
+      "cached": "1168124kB",
+      "active": "817484kB",
+      "inactive": "596692kB",
+      "dirty": "6336kB",
       "writeback": "0kB",
-      "anon_pages": "120788kB",
-      "mapped": "13488kB",
-      "slab": "152656kB",
-      "slab_reclaimable": "141452kB",
-      "slab_unreclaim": "11204kB",
-      "page_tables": "3680kB",
+      "anon_pages": "126244kB",
+      "mapped": "13808kB",
+      "slab": "161424kB",
+      "slab_reclaimable": "150128kB",
+      "slab_unreclaim": "11296kB",
+      "page_tables": "3488kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "1025004kB",
-      "committed_as": "220220kB",
+      "committed_as": "242912kB",
       "vmalloc_total": "34359738367kB",
-      "vmalloc_used": "10312kB",
-      "vmalloc_chunk": "34359722492kB"
+      "vmalloc_used": "10384kB",
+      "vmalloc_chunk": "34359722172kB"
     },
     "kernel": {
       "name": "Linux",
@@ -862,6 +915,106 @@
       "processor": "x86_64",
       "os": "GNU/Linux",
       "modules": {
+        "ip6t_REJECT": {
+          "size": "12939",
+          "refcount": "1"
+        },
+        "xt_hl": {
+          "size": "12521",
+          "refcount": "6"
+        },
+        "ip6t_rt": {
+          "size": "13537",
+          "refcount": "3"
+        },
+        "ipt_REJECT": {
+          "size": "12541",
+          "refcount": "1"
+        },
+        "xt_LOG": {
+          "size": "17717",
+          "refcount": "10"
+        },
+        "xt_limit": {
+          "size": "12711",
+          "refcount": "13"
+        },
+        "xt_tcpudp": {
+          "size": "12884",
+          "refcount": "22"
+        },
+        "xt_addrtype": {
+          "size": "12635",
+          "refcount": "4"
+        },
+        "nf_conntrack_netbios_ns": {
+          "size": "12665",
+          "refcount": "0"
+        },
+        "nf_conntrack_broadcast": {
+          "size": "12589",
+          "refcount": "1"
+        },
+        "nf_nat_ftp": {
+          "size": "12770",
+          "refcount": "0"
+        },
+        "nf_nat": {
+          "size": "21841",
+          "refcount": "1"
+        },
+        "nf_conntrack_ftp": {
+          "size": "18638",
+          "refcount": "1"
+        },
+        "nf_conntrack_ipv6": {
+          "size": "18894",
+          "refcount": "8"
+        },
+        "nf_defrag_ipv6": {
+          "size": "34768",
+          "refcount": "1"
+        },
+        "ip6table_filter": {
+          "size": "12815",
+          "refcount": "1"
+        },
+        "ip6_tables": {
+          "size": "27025",
+          "refcount": "1"
+        },
+        "nf_conntrack_ipv4": {
+          "size": "15012",
+          "refcount": "8"
+        },
+        "nf_defrag_ipv4": {
+          "size": "12758",
+          "refcount": "1"
+        },
+        "xt_recent": {
+          "size": "18498",
+          "refcount": "0"
+        },
+        "xt_conntrack": {
+          "size": "12760",
+          "refcount": "16"
+        },
+        "nf_conntrack": {
+          "size": "97202",
+          "refcount": "8"
+        },
+        "iptable_filter": {
+          "size": "12810",
+          "refcount": "1"
+        },
+        "ip_tables": {
+          "size": "27239",
+          "refcount": "1"
+        },
+        "x_tables": {
+          "size": "34059",
+          "refcount": "14"
+        },
         "vboxsf": {
           "size": "43786",
           "refcount": "1"
@@ -1192,15 +1345,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "4862685",
-              "packets": "5597",
+              "bytes": "6152942",
+              "packets": "6916",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "4862685",
-              "packets": "5597",
+              "bytes": "6152942",
+              "packets": "6916",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -1210,16 +1363,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "6582600",
-              "packets": "108342",
+              "bytes": "6751499",
+              "packets": "110701",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "312821656",
-              "packets": "318962",
+              "bytes": "322780553",
+              "packets": "328138",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -1228,16 +1381,16 @@
           "eth1": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "2107513",
-              "packets": "7145",
+              "bytes": "2781297",
+              "packets": "10118",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "4537673",
-              "packets": "9660",
+              "bytes": "5830751",
+              "packets": "13224",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -1252,13 +1405,13 @@
     "filesystem": {
       "/dev/sda1": {
         "kb_size": "41251136",
-        "kb_used": "2484692",
-        "kb_available": "37030532",
+        "kb_used": "2637148",
+        "kb_available": "36878076",
         "percent_used": "7%",
         "mount": "/",
         "total_inodes": "2621440",
-        "inodes_used": "128627",
-        "inodes_available": "2492813",
+        "inodes_used": "129653",
+        "inodes_available": "2491787",
         "inodes_percent_used": "5%",
         "fs_type": "ext4",
         "mount_options": [
@@ -1300,13 +1453,13 @@
       },
       "tmpfs": {
         "kb_size": "205004",
-        "kb_used": "360",
-        "kb_available": "204644",
+        "kb_used": "368",
+        "kb_available": "204636",
         "percent_used": "1%",
         "mount": "/run",
         "total_inodes": "256251",
-        "inodes_used": "327",
-        "inodes_available": "255924",
+        "inodes_used": "332",
+        "inodes_available": "255919",
         "inodes_percent_used": "1%",
         "fs_type": "tmpfs",
         "mount_options": [
@@ -1319,8 +1472,8 @@
       },
       "vagrant": {
         "kb_size": "243915264",
-        "kb_used": "63182788",
-        "kb_available": "180732476",
+        "kb_used": "63358156",
+        "kb_available": "180557108",
         "percent_used": "26%",
         "mount": "/vagrant",
         "total_inodes": "1000",
@@ -1545,12 +1698,12 @@
       "by_device": {
         "/dev/sda1": {
           "kb_size": "41251136",
-          "kb_used": "2484692",
-          "kb_available": "37030532",
+          "kb_used": "2637148",
+          "kb_available": "36878076",
           "percent_used": "7%",
           "total_inodes": "2621440",
-          "inodes_used": "128627",
-          "inodes_available": "2492813",
+          "inodes_used": "129653",
+          "inodes_available": "2491787",
           "inodes_percent_used": "5%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1609,12 +1762,12 @@
         },
         "tmpfs": {
           "kb_size": "205004",
-          "kb_used": "360",
-          "kb_available": "204644",
+          "kb_used": "368",
+          "kb_available": "204636",
           "percent_used": "1%",
           "total_inodes": "256251",
-          "inodes_used": "327",
-          "inodes_available": "255924",
+          "inodes_used": "332",
+          "inodes_available": "255919",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -1630,8 +1783,8 @@
         },
         "vagrant": {
           "kb_size": "243915264",
-          "kb_used": "63182788",
-          "kb_available": "180732476",
+          "kb_used": "63358156",
+          "kb_available": "180557108",
           "percent_used": "26%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1734,12 +1887,12 @@
       "by_mountpoint": {
         "/": {
           "kb_size": "41251136",
-          "kb_used": "2484692",
-          "kb_available": "37030532",
+          "kb_used": "2637148",
+          "kb_available": "36878076",
           "percent_used": "7%",
           "total_inodes": "2621440",
-          "inodes_used": "128627",
-          "inodes_available": "2492813",
+          "inodes_used": "129653",
+          "inodes_available": "2491787",
           "inodes_percent_used": "5%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1792,12 +1945,12 @@
         },
         "/run": {
           "kb_size": "205004",
-          "kb_used": "360",
-          "kb_available": "204644",
+          "kb_used": "368",
+          "kb_available": "204636",
           "percent_used": "1%",
           "total_inodes": "256251",
-          "inodes_used": "327",
-          "inodes_available": "255924",
+          "inodes_used": "332",
+          "inodes_available": "255919",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -1875,8 +2028,8 @@
         },
         "/vagrant": {
           "kb_size": "243915264",
-          "kb_used": "63182788",
-          "kb_available": "180732476",
+          "kb_used": "63358156",
+          "kb_available": "180557108",
           "percent_used": "26%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1994,13 +2147,13 @@
         "/dev/sda1,/": {
           "device": "/dev/sda1",
           "kb_size": "41251136",
-          "kb_used": "2484692",
-          "kb_available": "37030532",
+          "kb_used": "2637148",
+          "kb_available": "36878076",
           "percent_used": "7%",
           "mount": "/",
           "total_inodes": "2621440",
-          "inodes_used": "128627",
-          "inodes_available": "2492813",
+          "inodes_used": "129653",
+          "inodes_available": "2491787",
           "inodes_percent_used": "5%",
           "fs_type": "ext4",
           "mount_options": [
@@ -2045,13 +2198,13 @@
         "tmpfs,/run": {
           "device": "tmpfs",
           "kb_size": "205004",
-          "kb_used": "360",
-          "kb_available": "204644",
+          "kb_used": "368",
+          "kb_available": "204636",
           "percent_used": "1%",
           "mount": "/run",
           "total_inodes": "256251",
-          "inodes_used": "327",
-          "inodes_available": "255924",
+          "inodes_used": "332",
+          "inodes_available": "255919",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -2124,8 +2277,8 @@
         "vagrant,/vagrant": {
           "device": "vagrant",
           "kb_size": "243915264",
-          "kb_used": "63182788",
-          "kb_available": "180732476",
+          "kb_used": "63358156",
+          "kb_available": "180557108",
           "percent_used": "26%",
           "mount": "/vagrant",
           "total_inodes": "1000",
@@ -2415,11 +2568,11 @@
         "chef_root": "/opt/chef/embedded/lib/ruby/gems/2.1.0/gems/chef-12.7.2/lib"
       }
     },
-    "ohai_time": 1456555230.537172,
-    "uptime_seconds": 22011,
-    "uptime": "6 hours 06 minutes 51 seconds",
-    "idletime_seconds": 20631,
-    "idletime": "5 hours 43 minutes 51 seconds",
+    "ohai_time": 1456555960.022329,
+    "uptime_seconds": 22741,
+    "uptime": "6 hours 19 minutes 01 seconds",
+    "idletime_seconds": 21236,
+    "idletime": "5 hours 53 minutes 56 seconds",
     "init_package": "init",
     "cloud_v2": null,
     "command": {
@@ -2633,6 +2786,13 @@
           "uid": 1002,
           "shell": "/bin/bash",
           "gecos": ""
+        },
+        "redis": {
+          "dir": "/var/lib/redis",
+          "gid": 999,
+          "uid": 999,
+          "shell": "/bin/false",
+          "gecos": "Redis service account"
         }
       },
       "group": {
@@ -2972,6 +3132,12 @@
           "members": [
 
           ]
+        },
+        "redis": {
+          "gid": 999,
+          "members": [
+
+          ]
         }
       }
     },
@@ -2994,6 +3160,8 @@
       "sudo",
       "sudo::default",
       "users::sysadmins",
+      "firewall::default",
+      "ufw::default",
       "git::default",
       "java",
       "java::default",
@@ -3005,6 +3173,7 @@
       "redisio::default",
       "redisio::enable",
       "timezone-ii::debian",
+      "chef-sugar::default",
       "git::package",
       "java::set_attributes_from_version",
       "java::oracle",
@@ -3026,6 +3195,8 @@
       "timezone-ii::default",
       "sudo::default",
       "users::sysadmins",
+      "firewall::default",
+      "ufw::default",
       "git::default",
       "java::default",
       "nodejs::nodejs",
@@ -3050,6 +3221,12 @@
       "users": {
         "version": "2.0.3"
       },
+      "firewall": {
+        "version": "2.4.0"
+      },
+      "ufw": {
+        "version": "1.0.0"
+      },
       "git": {
         "version": "4.3.7"
       },
@@ -3067,6 +3244,9 @@
       },
       "redisio": {
         "version": "2.4.0"
+      },
+      "chef-sugar": {
+        "version": "3.3.0"
       },
       "build-essential": {
         "version": "2.3.1"
