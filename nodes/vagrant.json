@@ -55,6 +55,11 @@
     },
     "firewall": {
       "state": "[{\"http\"=>{\"port\"=>\"80\"}}]"
+    },
+    "nginx": {
+      "binary": "/opt/nginx-1.8.1/sbin/nginx",
+      "daemon_disable": true,
+      "src_binary": "/opt/nginx-1.8.1/sbin/nginx"
     }
   },
   "default": {
@@ -861,6 +866,343 @@
         "manage_config": true
       },
       "sentinels": null
+    },
+    "rsyslog": {
+      "default_log_dir": "/var/log",
+      "log_dir": "/srv/rsyslog",
+      "working_dir": "/var/spool/rsyslog",
+      "server": false,
+      "use_relp": false,
+      "relp_port": 20514,
+      "protocol": "tcp",
+      "bind": "*",
+      "port": 514,
+      "server_ip": null,
+      "server_search": "role:loghost",
+      "remote_logs": true,
+      "per_host_dir": "%$YEAR%/%$MONTH%/%$DAY%/%HOSTNAME%",
+      "max_message_size": "2k",
+      "preserve_fqdn": "off",
+      "high_precision_timestamps": false,
+      "repeated_msg_reduction": "on",
+      "logs_to_forward": "*.*",
+      "enable_imklog": true,
+      "config_prefix": "/etc",
+      "default_file_template": null,
+      "default_remote_template": null,
+      "rate_limit_interval": null,
+      "rate_limit_burst": null,
+      "enable_tls": false,
+      "action_queue_max_disk_space": "1G",
+      "tls_ca_file": null,
+      "tls_certificate_file": null,
+      "tls_key_file": null,
+      "tls_auth_mode": "anon",
+      "use_local_ipv4": false,
+      "allow_non_local": false,
+      "custom_remote": [
+        {
+
+        }
+      ],
+      "additional_directives": {
+
+      },
+      "service_name": "rsyslog",
+      "user": "syslog",
+      "group": "adm",
+      "priv_seperation": true,
+      "priv_user": null,
+      "priv_group": "syslog",
+      "modules": [
+        "imuxsock",
+        "imklog"
+      ],
+      "default_facility_logs": {
+        "auth,authpriv.*": "/var/log/auth.log",
+        "*.*;auth,authpriv.none": "-/var/log/syslog",
+        "daemon.*": "-/var/log/daemon.log",
+        "kern.*": "-/var/log/kern.log",
+        "mail.*": "-/var/log/mail.log",
+        "user.*": "-/var/log/user.log",
+        "mail.info": "-/var/log/mail.info",
+        "mail.warn": "-/var/log/mail.warn",
+        "mail.err": "/var/log/mail.err",
+        "news.crit": "/var/log/news/news.crit",
+        "news.err": "/var/log/news/news.err",
+        "news.notice": "-/var/log/news/news.notice",
+        "*.=debug;auth,authpriv.none;news.none;mail.none": "-/var/log/debug",
+        "*.=info;*.=notice;*.=warn;auth,authpriv.none;cron,daemon.none;mail,news.none": "-/var/log/messages",
+        "*.emerg": ":omusrmsg:*"
+      }
+    },
+    "bluepill": {
+      "bin": "/usr/bin/bluepill",
+      "logfile": "/var/log/bluepill.log",
+      "pid_dir": "/var/run/bluepill",
+      "state_dir": "/var/lib/bluepill",
+      "group": 0,
+      "use_rsyslog": false,
+      "init_dir": "/etc/init.d",
+      "conf_dir": "/etc/bluepill",
+      "defaults_dir": "/etc/default"
+    },
+    "ohai": {
+      "plugin_path": "/etc/chef/ohai_plugins",
+      "hints_path": "/etc/chef/ohai/hints",
+      "plugins": {
+        "ohai": "plugins"
+      }
+    },
+    "packagecloud": {
+      "base_repo_path": "/install/repositories/",
+      "gpg_key_path": "/gpgkey",
+      "hostname_override": null,
+      "default_type": "deb"
+    },
+    "runit": {
+      "sv_bin": "/usr/bin/sv",
+      "chpst_bin": "/usr/bin/chpst",
+      "service_dir": "/etc/service",
+      "sv_dir": "/etc/sv",
+      "lsb_init_dir": "/etc/init.d",
+      "executable": "/sbin/runit",
+      "start": "start runsvdir",
+      "stop": "stop runsvdir",
+      "reload": "reload runsvdir"
+    },
+    "nginx": {
+      "version": "1.8.1",
+      "package_name": "nginx",
+      "port": "80",
+      "dir": "/etc/nginx",
+      "script_dir": "/usr/sbin",
+      "log_dir": "/var/log/nginx",
+      "log_dir_perm": "0750",
+      "binary": "/usr/sbin/nginx",
+      "default_root": "/var/www/nginx-default",
+      "ulimit": "1024",
+      "pid": "/run/nginx.pid",
+      "user": "www-data",
+      "init_style": "runit",
+      "upstart": {
+        "runlevels": "2345",
+        "respawn_limit": null,
+        "foreground": true
+      },
+      "group": "www-data",
+      "gzip": "on",
+      "gzip_static": "off",
+      "gzip_http_version": "1.0",
+      "gzip_comp_level": "2",
+      "gzip_proxied": "any",
+      "gzip_vary": "off",
+      "gzip_buffers": null,
+      "gzip_types": [
+        "text/plain",
+        "text/css",
+        "application/x-javascript",
+        "text/xml",
+        "application/xml",
+        "application/rss+xml",
+        "application/atom+xml",
+        "text/javascript",
+        "application/javascript",
+        "application/json",
+        "text/mathml"
+      ],
+      "gzip_min_length": 1000,
+      "gzip_disable": "MSIE [1-6]\\.",
+      "keepalive": "on",
+      "keepalive_requests": 100,
+      "keepalive_timeout": 65,
+      "worker_processes": 1,
+      "worker_connections": 1024,
+      "worker_rlimit_nofile": null,
+      "multi_accept": false,
+      "event": null,
+      "accept_mutex_delay": null,
+      "server_tokens": null,
+      "server_names_hash_bucket_size": 64,
+      "variables_hash_max_size": 1024,
+      "variables_hash_bucket_size": 64,
+      "sendfile": "on",
+      "underscores_in_headers": null,
+      "tcp_nodelay": "on",
+      "tcp_nopush": "on",
+      "access_log_options": null,
+      "error_log_options": null,
+      "disable_access_log": false,
+      "log_formats": {
+
+      },
+      "install_method": "package",
+      "default_site_enabled": true,
+      "types_hash_max_size": 2048,
+      "types_hash_bucket_size": 64,
+      "proxy_read_timeout": null,
+      "client_body_buffer_size": null,
+      "client_max_body_size": null,
+      "large_client_header_buffers": null,
+      "default": {
+        "modules": [
+
+        ]
+      },
+      "extra_configs": {
+
+      },
+      "auth_request": {
+        "url": "http://mdounin.ru/hg/ngx_http_auth_request_module/archive/ee8ff54f9b66.tar.gz",
+        "checksum": "7ab85e1c350c5a9c60ed1319c45fed144cc3c3e1"
+      },
+      "devel": {
+        "version": "0.2.18",
+        "url": "https://github.com/simpl/ngx_devel_kit/archive/v0.2.18.tar.gz",
+        "checksum": "c9c9f0a1b068d38c6c45b15d9605f1b2344dbcd45abf0764cd8e2ba92d6a3d2c"
+      },
+      "echo": {
+        "version": "0.57",
+        "url": "https://github.com/openresty/echo-nginx-module/archive/v0.57.tar.gz",
+        "checksum": "8467237ca0fae74ca7a32fbd34fc6044df307098415d48068214c9c235695a07"
+      },
+      "geoip": {
+        "path": "/srv/geoip",
+        "enable_city": true,
+        "country_dat_url": "http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz",
+        "country_dat_checksum": "79ff1099e96c2dc1c2539c9a18aaa13a9afd085cae477df60d95f1644d42bc07",
+        "city_dat_url": "http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz",
+        "city_dat_checksum": "8a6467033a528f68b1a97de24d9d0ce86c8e8e83683820e16e433ddbd3f712f7",
+        "lib_version": "1.6.3",
+        "lib_url": "https://github.com/maxmind/geoip-api-c/releases/download/v1.6.3/GeoIP-1.6.3.tar.gz",
+        "lib_checksum": "e483839a81a91c3c85df89ef409fc7b526c489e0355d537861cfd1ea9534a8f2"
+      },
+      "headers_more": {
+        "version": "0.25",
+        "source_url": "https://github.com/openresty/headers-more-nginx-module/archive/v0.25.tar.gz",
+        "source_checksum": "1473f96f59dcec9d83ce65d691559993c1f80da8c0a4c0c0a30dae9f969eeabf"
+      },
+      "lua": {
+        "version": "0.8.7",
+        "url": "https://github.com/chaoslawful/lua-nginx-module/archive/v0.8.7.tar.gz",
+        "checksum": "4b9be3c159b9c884a38e044e07aaf4d06bd2893977d0b0dae02c124d8e907f93"
+      },
+      "luajit": {
+        "version": "2.0.2",
+        "url": "http://luajit.org/download/LuaJIT-2.0.2.tar.gz",
+        "checksum": "c05202974a5890e777b181908ac237625b499aece026654d7cc33607e3f46c38"
+      },
+      "naxsi": {
+        "version": "0.53-2",
+        "url": "https://github.com/nbs-system/naxsi/archive/0.53-2.tar.gz",
+        "checksum": "3eadff1d91995beae41b92733ade28091c2075a24ae37058f4d6aa90b0f4b660"
+      },
+      "openssl_source": {
+        "version": "1.0.1h",
+        "url": "http://www.openssl.org/source/openssl-1.0.1h.tar.gz"
+      },
+      "pagespeed": {
+        "version": "1.8.31.4",
+        "url": "https://github.com/pagespeed/ngx_pagespeed/archive/release-1.8.31.4-beta.tar.gz",
+        "packages": {
+          "rhel": [
+            "gcc-c++",
+            "pcre-dev",
+            "pcre-devel",
+            "zlib-devel",
+            "make"
+          ],
+          "debian": [
+            "build-essential",
+            "zlib1g-dev",
+            "libpcre3",
+            "libpcre3-dev"
+          ]
+        }
+      },
+      "psol": {
+        "url": "https://dl.google.com/dl/page-speed/psol/1.8.31.4.tar.gz"
+      },
+      "passenger": {
+        "version": "4.0.57",
+        "root": "/var/lib/gems/1.9.1/gems/passenger-4.0.57",
+        "ruby": "/usr/bin/ruby1.9.1",
+        "packages": {
+          "rhel": [
+            "ruby-devel",
+            "curl-devel"
+          ],
+          "fedora": [
+            "ruby-devel",
+            "libcurl-devel"
+          ],
+          "debian": [
+            "ruby-dev",
+            "libcurl4-gnutls-dev"
+          ]
+        },
+        "install_rake": true,
+        "spawn_method": "smart-lv2",
+        "buffer_response": "on",
+        "max_pool_size": 6,
+        "min_instances": 1,
+        "max_instances_per_app": 0,
+        "pool_idle_time": 300,
+        "max_requests": 0,
+        "gem_binary": null,
+        "nodejs": null
+      },
+      "enable_rate_limiting": false,
+      "rate_limiting_zone_name": "default",
+      "rate_limiting_backoff": "10m",
+      "rate_limit": "1r/s",
+      "upstream_repository": "http://nginx.org/packages/ubuntu",
+      "set_misc": {
+        "version": "0.24",
+        "url": "https://github.com/agentzh/set-misc-nginx-module/archive/v0.24.tar.gz",
+        "checksum": "da404a7dac5fa4a0a86f42b4ec7648b607f4cd66"
+      },
+      "socketproxy": {
+        "root": "/usr/share/nginx/apps",
+        "app_owner": "root",
+        "logname": "socketproxy",
+        "log_level": "error"
+      },
+      "source": {
+        "version": "1.8.1",
+        "prefix": "/opt/nginx-1.8.1",
+        "conf_path": "/etc/nginx/nginx.conf",
+        "sbin_path": "/opt/nginx-1.8.1/sbin/nginx",
+        "default_configure_flags": [
+          "--prefix=/opt/nginx-1.8.1",
+          "--conf-path=/etc/nginx/nginx.conf",
+          "--sbin-path=/opt/nginx-1.8.1/sbin/nginx"
+        ],
+        "url": "http://nginx.org/download/nginx-1.8.1.tar.gz",
+        "checksum": "8f4b3c630966c044ec72715754334d1fdf741caa1d5795fb4646c27d09f797b7",
+        "modules": [
+          "nginx::http_ssl_module",
+          "nginx::http_gzip_static_module"
+        ],
+        "use_existing_user": false
+      },
+      "configure_flags": [
+
+      ],
+      "status": {
+        "port": "8090"
+      },
+      "syslog": {
+        "git_repo": "https://github.com/yaoweibin/nginx_syslog_patch.git",
+        "git_revision": "master"
+      },
+      "upload_progress": {
+        "url": "https://github.com/masterzen/nginx-upload-progress-module/tarball/v0.9.0",
+        "checksum": "3fb903dab595cf6656fa0fc5743a48daffbba2f6b5c554836be630800eaad4e2",
+        "javascript_output": true,
+        "zone_name": "proxied",
+        "zone_size": "1m"
+      }
     }
   },
   "automatic": {
@@ -918,26 +1260,26 @@
         "free": "0kB"
       },
       "total": "2050008",
-      "free": "156640kB",
-      "buffers": "91152kB",
-      "cached": "1041136kB",
-      "active": "1132540kB",
-      "inactive": "582780kB",
-      "dirty": "52kB",
+      "free": "139272kB",
+      "buffers": "92652kB",
+      "cached": "1014108kB",
+      "active": "1196208kB",
+      "inactive": "539404kB",
+      "dirty": "68kB",
       "writeback": "0kB",
-      "anon_pages": "583048kB",
-      "mapped": "21120kB",
-      "slab": "152492kB",
-      "slab_reclaimable": "140996kB",
-      "slab_unreclaim": "11496kB",
-      "page_tables": "4576kB",
+      "anon_pages": "628852kB",
+      "mapped": "22176kB",
+      "slab": "149332kB",
+      "slab_reclaimable": "137640kB",
+      "slab_unreclaim": "11692kB",
+      "page_tables": "4924kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "1025004kB",
-      "committed_as": "981000kB",
+      "committed_as": "1023144kB",
       "vmalloc_total": "34359738367kB",
-      "vmalloc_used": "10384kB",
-      "vmalloc_chunk": "34359721404kB"
+      "vmalloc_used": "10416kB",
+      "vmalloc_chunk": "34359721180kB"
     },
     "kernel": {
       "name": "Linux",
@@ -1377,15 +1719,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "7346200",
-              "packets": "8004",
+              "bytes": "10137460",
+              "packets": "11082",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "7346200",
-              "packets": "8004",
+              "bytes": "10137460",
+              "packets": "11082",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -1395,16 +1737,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "7282905",
-              "packets": "119396",
+              "bytes": "7389638",
+              "packets": "120959",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "349967545",
-              "packets": "355040",
+              "bytes": "355577378",
+              "packets": "360499",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -1413,16 +1755,16 @@
           "eth1": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "3339383",
-              "packets": "12801",
+              "bytes": "4497948",
+              "packets": "18182",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "7055091",
-              "packets": "16656",
+              "bytes": "9831758",
+              "packets": "23288",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -1437,14 +1779,14 @@
     "filesystem": {
       "/dev/sda1": {
         "kb_size": "41251136",
-        "kb_used": "3054304",
-        "kb_available": "36460920",
+        "kb_used": "3086300",
+        "kb_available": "36428924",
         "percent_used": "8%",
         "mount": "/",
         "total_inodes": "2621440",
-        "inodes_used": "130660",
-        "inodes_available": "2490780",
-        "inodes_percent_used": "5%",
+        "inodes_used": "131821",
+        "inodes_available": "2489619",
+        "inodes_percent_used": "6%",
         "fs_type": "ext4",
         "mount_options": [
           "rw"
@@ -1485,13 +1827,13 @@
       },
       "tmpfs": {
         "kb_size": "205004",
-        "kb_used": "372",
-        "kb_available": "204632",
+        "kb_used": "376",
+        "kb_available": "204628",
         "percent_used": "1%",
         "mount": "/run",
         "total_inodes": "256251",
-        "inodes_used": "336",
-        "inodes_available": "255915",
+        "inodes_used": "337",
+        "inodes_available": "255914",
         "inodes_percent_used": "1%",
         "fs_type": "tmpfs",
         "mount_options": [
@@ -1504,8 +1846,8 @@
       },
       "vagrant": {
         "kb_size": "243915264",
-        "kb_used": "62610820",
-        "kb_available": "181304444",
+        "kb_used": "62779328",
+        "kb_available": "181135936",
         "percent_used": "26%",
         "mount": "/vagrant",
         "total_inodes": "1000",
@@ -1730,13 +2072,13 @@
       "by_device": {
         "/dev/sda1": {
           "kb_size": "41251136",
-          "kb_used": "3054304",
-          "kb_available": "36460920",
+          "kb_used": "3086300",
+          "kb_available": "36428924",
           "percent_used": "8%",
           "total_inodes": "2621440",
-          "inodes_used": "130660",
-          "inodes_available": "2490780",
-          "inodes_percent_used": "5%",
+          "inodes_used": "131821",
+          "inodes_available": "2489619",
+          "inodes_percent_used": "6%",
           "fs_type": "ext4",
           "mount_options": [
             "rw"
@@ -1794,12 +2136,12 @@
         },
         "tmpfs": {
           "kb_size": "205004",
-          "kb_used": "372",
-          "kb_available": "204632",
+          "kb_used": "376",
+          "kb_available": "204628",
           "percent_used": "1%",
           "total_inodes": "256251",
-          "inodes_used": "336",
-          "inodes_available": "255915",
+          "inodes_used": "337",
+          "inodes_available": "255914",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -1815,8 +2157,8 @@
         },
         "vagrant": {
           "kb_size": "243915264",
-          "kb_used": "62610820",
-          "kb_available": "181304444",
+          "kb_used": "62779328",
+          "kb_available": "181135936",
           "percent_used": "26%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1919,13 +2261,13 @@
       "by_mountpoint": {
         "/": {
           "kb_size": "41251136",
-          "kb_used": "3054304",
-          "kb_available": "36460920",
+          "kb_used": "3086300",
+          "kb_available": "36428924",
           "percent_used": "8%",
           "total_inodes": "2621440",
-          "inodes_used": "130660",
-          "inodes_available": "2490780",
-          "inodes_percent_used": "5%",
+          "inodes_used": "131821",
+          "inodes_available": "2489619",
+          "inodes_percent_used": "6%",
           "fs_type": "ext4",
           "mount_options": [
             "rw",
@@ -1977,12 +2319,12 @@
         },
         "/run": {
           "kb_size": "205004",
-          "kb_used": "372",
-          "kb_available": "204632",
+          "kb_used": "376",
+          "kb_available": "204628",
           "percent_used": "1%",
           "total_inodes": "256251",
-          "inodes_used": "336",
-          "inodes_available": "255915",
+          "inodes_used": "337",
+          "inodes_available": "255914",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -2060,8 +2402,8 @@
         },
         "/vagrant": {
           "kb_size": "243915264",
-          "kb_used": "62610820",
-          "kb_available": "181304444",
+          "kb_used": "62779328",
+          "kb_available": "181135936",
           "percent_used": "26%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -2179,14 +2521,14 @@
         "/dev/sda1,/": {
           "device": "/dev/sda1",
           "kb_size": "41251136",
-          "kb_used": "3054304",
-          "kb_available": "36460920",
+          "kb_used": "3086300",
+          "kb_available": "36428924",
           "percent_used": "8%",
           "mount": "/",
           "total_inodes": "2621440",
-          "inodes_used": "130660",
-          "inodes_available": "2490780",
-          "inodes_percent_used": "5%",
+          "inodes_used": "131821",
+          "inodes_available": "2489619",
+          "inodes_percent_used": "6%",
           "fs_type": "ext4",
           "mount_options": [
             "rw"
@@ -2230,13 +2572,13 @@
         "tmpfs,/run": {
           "device": "tmpfs",
           "kb_size": "205004",
-          "kb_used": "372",
-          "kb_available": "204632",
+          "kb_used": "376",
+          "kb_available": "204628",
           "percent_used": "1%",
           "mount": "/run",
           "total_inodes": "256251",
-          "inodes_used": "336",
-          "inodes_available": "255915",
+          "inodes_used": "337",
+          "inodes_available": "255914",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -2309,8 +2651,8 @@
         "vagrant,/vagrant": {
           "device": "vagrant",
           "kb_size": "243915264",
-          "kb_used": "62610820",
-          "kb_available": "181304444",
+          "kb_used": "62779328",
+          "kb_available": "181135936",
           "percent_used": "26%",
           "mount": "/vagrant",
           "total_inodes": "1000",
@@ -2600,11 +2942,11 @@
         "chef_root": "/opt/chef/embedded/lib/ruby/gems/2.1.0/gems/chef-12.7.2/lib"
       }
     },
-    "ohai_time": 1456556778.1312823,
-    "uptime_seconds": 23559,
-    "uptime": "6 hours 32 minutes 39 seconds",
-    "idletime_seconds": 22023,
-    "idletime": "6 hours 07 minutes 03 seconds",
+    "ohai_time": 1456558391.5296526,
+    "uptime_seconds": 25172,
+    "uptime": "6 hours 59 minutes 32 seconds",
+    "idletime_seconds": 23569,
+    "idletime": "6 hours 32 minutes 49 seconds",
     "init_package": "init",
     "cloud_v2": null,
     "command": {
@@ -2704,7 +3046,7 @@
           "dir": "/var/www",
           "gid": 33,
           "uid": 33,
-          "shell": "/usr/sbin/nologin",
+          "shell": "/bin/false",
           "gecos": "www-data"
         },
         "backup": {
@@ -3219,6 +3561,9 @@
       "redisio::enable",
       "mysql_database",
       "mysql_database::default",
+      "nginx::source",
+      "nginx_conf",
+      "nginx_conf::default",
       "timezone-ii::debian",
       "chef-sugar::default",
       "git::package",
@@ -3235,7 +3580,15 @@
       "redisio::_install_prereqs",
       "redisio::install",
       "ulimit::default",
-      "redisio::configure"
+      "redisio::configure",
+      "nginx::ohai_plugin",
+      "ohai::default",
+      "nginx::commons_dir",
+      "nginx::commons_script",
+      "nginx::commons_conf",
+      "nginx::http_ssl_module",
+      "nginx::http_gzip_static_module",
+      "runit::default"
     ],
     "expanded_run_list": [
       "locale::default",
@@ -3251,7 +3604,9 @@
       "ruby_rbenv::system",
       "redisio::default",
       "redisio::enable",
-      "mysql_database::default"
+      "mysql_database::default",
+      "nginx::source",
+      "nginx_conf::default"
     ],
     "roles": [
       "system"
@@ -3296,6 +3651,12 @@
       "mysql_database": {
         "version": "0.1.0"
       },
+      "nginx": {
+        "version": "2.7.6"
+      },
+      "nginx_conf": {
+        "version": "0.1.0"
+      },
       "chef-sugar": {
         "version": "3.3.0"
       },
@@ -3326,6 +3687,15 @@
       "mysql": {
         "version": "6.1.2"
       },
+      "bluepill": {
+        "version": "2.4.2"
+      },
+      "ohai": {
+        "version": "2.1.0"
+      },
+      "runit": {
+        "version": "1.7.6"
+      },
       "7-zip": {
         "version": "1.0.2"
       },
@@ -3344,9 +3714,30 @@
       "smf": {
         "version": "2.2.8"
       },
+      "rsyslog": {
+        "version": "4.0.0"
+      },
+      "packagecloud": {
+        "version": "0.2.0"
+      },
       "rbac": {
         "version": "1.0.3"
+      },
+      "compat_resource": {
+        "version": "12.7.3"
       }
+    },
+    "nginx": {
+      "version": "1.8.1",
+      "configure_arguments": [
+        "--prefix=/opt/nginx-1.8.1",
+        "--conf-path=/etc/nginx/nginx.conf",
+        "--sbin-path=/opt/nginx-1.8.1/sbin/nginx",
+        "--with-http_ssl_module",
+        "--with-http_gzip_static_module"
+      ],
+      "prefix": "/opt/nginx-1.8.1",
+      "conf_path": "/etc/nginx/nginx.conf"
     }
   },
   "run_list": [

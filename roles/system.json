@@ -49,6 +49,12 @@
     },
     "redisio": {
       "version": "3.0.7"
+    },
+    "nginx": {
+      "source": {
+        "checksum": "8f4b3c630966c044ec72715754334d1fdf741caa1d5795fb4646c27d09f797b7"
+      },
+      "version": "1.8.1"
     }
   },
   "run_list": [
@@ -65,6 +71,8 @@
     "recipe[ruby_rbenv::system]",
     "recipe[redisio]",
     "recipe[redisio::enable]",
-    "recipe[mysql_database]"
+    "recipe[mysql_database]",
+    "recipe[nginx::source]",
+    "recipe[nginx_conf]"
   ]
 }
