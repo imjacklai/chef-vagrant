@@ -11,6 +11,9 @@ DEPENDENCIES
   nodejs
     git: git://github.com/redguide/nodejs.git
     revision: ec7d9df5c1a8cff1b10c4c047dc9233b33f24e19
+  redisio
+    git: git://github.com/brianbianco/redisio.git
+    revision: 3d4c1f694408db5f20b65dc92cf8396831bf2b8d
   ruby_build
     git: git://github.com/fnichol/chef-ruby_build.git
     revision: 4d3361995a6953076951693eff1b326ab499fe1e
@@ -55,6 +58,9 @@ GRAPH
     build-essential (>= 0.0.0)
     homebrew (>= 0.0.0)
     yum-epel (>= 0.0.0)
+  redisio (2.4.0)
+    build-essential (>= 0.0.0)
+    ulimit (>= 0.1.2)
   ruby_build (0.8.1)
   ruby_rbenv (1.0.1)
     java (> 1.4.0)
@@ -63,6 +69,7 @@ GRAPH
     windows (>= 1.2.2)
   sudo (2.9.0)
   timezone-ii (0.2.9992)
+  ulimit (0.3.3)
   users (2.0.3)
   windows (1.39.1)
     chef_handler (>= 0.0.0)

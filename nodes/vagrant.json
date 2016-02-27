@@ -45,6 +45,13 @@
         "make",
         "g++"
       ]
+    },
+    "redisio": {
+      "servers": [
+        {
+          "port": "6379"
+        }
+      ]
     }
   },
   "default": {
@@ -628,6 +635,147 @@
       ],
       "user_home_root": "/home",
       "global": "2.2.3"
+    },
+    "ulimit": {
+      "pam_su_template_cookbook": null,
+      "users": {
+
+      },
+      "security_limits_directory": "/etc/security/limits.d"
+    },
+    "redisio": {
+      "safe_install": true,
+      "package_install": false,
+      "package_name": "redis-server",
+      "bypass_setup": false,
+      "mirror": "http://download.redis.io/releases/",
+      "base_name": "redis-",
+      "artifact_type": "tar.gz",
+      "base_piddir": "/var/run/redis",
+      "version": "3.0.7",
+      "install_dir": null,
+      "job_control": "initd",
+      "init.d": {
+        "required_start": [
+
+        ],
+        "required_stop": [
+
+        ]
+      },
+      "default_settings": {
+        "user": "redis",
+        "group": "redis",
+        "homedir": "/var/lib/redis",
+        "shell": "/bin/false",
+        "systemuser": true,
+        "uid": null,
+        "ulimit": 0,
+        "configdir": "/etc/redis",
+        "name": null,
+        "tcpbacklog": "511",
+        "address": null,
+        "databases": "16",
+        "backuptype": "rdb",
+        "datadir": "/var/lib/redis",
+        "unixsocket": null,
+        "unixsocketperm": null,
+        "timeout": "0",
+        "keepalive": "0",
+        "loglevel": "notice",
+        "logfile": null,
+        "syslogenabled": "yes",
+        "syslogfacility": "local0",
+        "shutdown_save": false,
+        "save": null,
+        "stopwritesonbgsaveerror": "yes",
+        "rdbcompression": "yes",
+        "rdbchecksum": "yes",
+        "dbfilename": null,
+        "slaveof": null,
+        "masterauth": null,
+        "slaveservestaledata": "yes",
+        "slavereadonly": "yes",
+        "replpingslaveperiod": "10",
+        "repltimeout": "60",
+        "repldisabletcpnodelay": "no",
+        "slavepriority": "100",
+        "requirepass": null,
+        "rename_commands": null,
+        "maxclients": 10000,
+        "maxmemory": null,
+        "maxmemorypolicy": null,
+        "maxmemorysamples": null,
+        "appendfilename": null,
+        "appendfsync": "everysec",
+        "noappendfsynconrewrite": "no",
+        "aofrewritepercentage": "100",
+        "aofrewriteminsize": "64mb",
+        "luatimelimit": "5000",
+        "slowloglogslowerthan": "10000",
+        "slowlogmaxlen": "1024",
+        "notifykeyspaceevents": "",
+        "hashmaxziplistentries": "512",
+        "hashmaxziplistvalue": "64",
+        "listmaxziplistentries": "512",
+        "listmaxziplistvalue": "64",
+        "setmaxintsetentries": "512",
+        "zsetmaxziplistentries": "128",
+        "zsetmaxziplistvalue": "64",
+        "hllsparsemaxbytes": "3000",
+        "activerehasing": "yes",
+        "clientoutputbufferlimit": [
+          [
+            "normal",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "slave",
+            "256mb",
+            "64mb",
+            "60"
+          ],
+          [
+            "pubsub",
+            "32mb",
+            "8mb",
+            "60"
+          ]
+        ],
+        "hz": "10",
+        "aofrewriteincrementalfsync": "yes",
+        "clusterenabled": "no",
+        "clusterconfigfile": null,
+        "clusternodetimeout": 5000,
+        "includes": null
+      },
+      "servers": null,
+      "bin_path": "/usr/local/bin",
+      "gem": {
+        "name": "redis",
+        "version": null
+      },
+      "sentinel_defaults": {
+        "user": "redis",
+        "configdir": "/etc/redis",
+        "sentinel_port": 26379,
+        "monitor": null,
+        "down-after-milliseconds": 30000,
+        "can-failover": "yes",
+        "parallel-syncs": 1,
+        "failover-timeout": 900000,
+        "loglevel": "notice",
+        "logfile": null,
+        "syslogenabled": "yes",
+        "syslogfacility": "local0",
+        "quorum_count": 2
+      },
+      "sentinel": {
+        "manage_config": true
+      },
+      "sentinels": null
     }
   },
   "automatic": {
@@ -684,24 +832,24 @@
         "total": "0kB",
         "free": "0kB"
       },
-      "total": "2050008kB",
-      "free": "710356kB",
-      "buffers": "76504kB",
-      "cached": "967528kB",
-      "active": "527560kB",
-      "inactive": "636808kB",
-      "dirty": "1424kB",
+      "total": "2050008",
+      "free": "708444kB",
+      "buffers": "76568kB",
+      "cached": "968032kB",
+      "active": "528632kB",
+      "inactive": "636756kB",
+      "dirty": "48kB",
       "writeback": "0kB",
-      "anon_pages": "120304kB",
-      "mapped": "13320kB",
-      "slab": "152620kB",
-      "slab_reclaimable": "141404kB",
-      "slab_unreclaim": "11216kB",
-      "page_tables": "3404kB",
+      "anon_pages": "120788kB",
+      "mapped": "13488kB",
+      "slab": "152656kB",
+      "slab_reclaimable": "141452kB",
+      "slab_unreclaim": "11204kB",
+      "page_tables": "3680kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "1025004kB",
-      "committed_as": "217844kB",
+      "committed_as": "220220kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "10312kB",
       "vmalloc_chunk": "34359722492kB"
@@ -1044,15 +1192,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "4510795",
-              "packets": "5468",
+              "bytes": "4862685",
+              "packets": "5597",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "4510795",
-              "packets": "5468",
+              "bytes": "4862685",
+              "packets": "5597",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -1062,16 +1210,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "6540028",
-              "packets": "107726",
+              "bytes": "6582600",
+              "packets": "108342",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "311656308",
-              "packets": "317514",
+              "bytes": "312821656",
+              "packets": "318962",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -1080,16 +1228,16 @@
           "eth1": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "1960800",
-              "packets": "6597",
+              "bytes": "2107513",
+              "packets": "7145",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "4187600",
-              "packets": "8971",
+              "bytes": "4537673",
+              "packets": "9660",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -1104,13 +1252,13 @@
     "filesystem": {
       "/dev/sda1": {
         "kb_size": "41251136",
-        "kb_used": "2484680",
-        "kb_available": "37030544",
+        "kb_used": "2484692",
+        "kb_available": "37030532",
         "percent_used": "7%",
         "mount": "/",
         "total_inodes": "2621440",
-        "inodes_used": "128625",
-        "inodes_available": "2492815",
+        "inodes_used": "128627",
+        "inodes_available": "2492813",
         "inodes_percent_used": "5%",
         "fs_type": "ext4",
         "mount_options": [
@@ -1171,8 +1319,8 @@
       },
       "vagrant": {
         "kb_size": "243915264",
-        "kb_used": "63386508",
-        "kb_available": "180528756",
+        "kb_used": "63182788",
+        "kb_available": "180732476",
         "percent_used": "26%",
         "mount": "/vagrant",
         "total_inodes": "1000",
@@ -1397,12 +1545,12 @@
       "by_device": {
         "/dev/sda1": {
           "kb_size": "41251136",
-          "kb_used": "2484680",
-          "kb_available": "37030544",
+          "kb_used": "2484692",
+          "kb_available": "37030532",
           "percent_used": "7%",
           "total_inodes": "2621440",
-          "inodes_used": "128625",
-          "inodes_available": "2492815",
+          "inodes_used": "128627",
+          "inodes_available": "2492813",
           "inodes_percent_used": "5%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1482,8 +1630,8 @@
         },
         "vagrant": {
           "kb_size": "243915264",
-          "kb_used": "63386508",
-          "kb_available": "180528756",
+          "kb_used": "63182788",
+          "kb_available": "180732476",
           "percent_used": "26%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1586,12 +1734,12 @@
       "by_mountpoint": {
         "/": {
           "kb_size": "41251136",
-          "kb_used": "2484680",
-          "kb_available": "37030544",
+          "kb_used": "2484692",
+          "kb_available": "37030532",
           "percent_used": "7%",
           "total_inodes": "2621440",
-          "inodes_used": "128625",
-          "inodes_available": "2492815",
+          "inodes_used": "128627",
+          "inodes_available": "2492813",
           "inodes_percent_used": "5%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1727,8 +1875,8 @@
         },
         "/vagrant": {
           "kb_size": "243915264",
-          "kb_used": "63386508",
-          "kb_available": "180528756",
+          "kb_used": "63182788",
+          "kb_available": "180732476",
           "percent_used": "26%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1846,13 +1994,13 @@
         "/dev/sda1,/": {
           "device": "/dev/sda1",
           "kb_size": "41251136",
-          "kb_used": "2484680",
-          "kb_available": "37030544",
+          "kb_used": "2484692",
+          "kb_available": "37030532",
           "percent_used": "7%",
           "mount": "/",
           "total_inodes": "2621440",
-          "inodes_used": "128625",
-          "inodes_available": "2492815",
+          "inodes_used": "128627",
+          "inodes_available": "2492813",
           "inodes_percent_used": "5%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1976,8 +2124,8 @@
         "vagrant,/vagrant": {
           "device": "vagrant",
           "kb_size": "243915264",
-          "kb_used": "63386508",
-          "kb_available": "180528756",
+          "kb_used": "63182788",
+          "kb_available": "180732476",
           "percent_used": "26%",
           "mount": "/vagrant",
           "total_inodes": "1000",
@@ -2267,11 +2415,11 @@
         "chef_root": "/opt/chef/embedded/lib/ruby/gems/2.1.0/gems/chef-12.7.2/lib"
       }
     },
-    "ohai_time": 1456547332.3028467,
-    "uptime_seconds": 17240,
-    "uptime": "4 hours 47 minutes 20 seconds",
-    "idletime_seconds": 15867,
-    "idletime": "4 hours 24 minutes 27 seconds",
+    "ohai_time": 1456555230.537172,
+    "uptime_seconds": 22011,
+    "uptime": "6 hours 06 minutes 51 seconds",
+    "idletime_seconds": 20631,
+    "idletime": "5 hours 43 minutes 51 seconds",
     "init_package": "init",
     "cloud_v2": null,
     "command": {
@@ -2853,6 +3001,9 @@
       "ruby_build",
       "ruby_build::default",
       "ruby_rbenv::system",
+      "redisio",
+      "redisio::default",
+      "redisio::enable",
       "timezone-ii::debian",
       "git::package",
       "java::set_attributes_from_version",
@@ -2864,7 +3015,11 @@
       "build-essential::default",
       "build-essential::_debian",
       "ruby_rbenv::system_install",
-      "ruby_rbenv::default"
+      "ruby_rbenv::default",
+      "redisio::_install_prereqs",
+      "redisio::install",
+      "ulimit::default",
+      "redisio::configure"
     ],
     "expanded_run_list": [
       "locale::default",
@@ -2875,7 +3030,9 @@
       "java::default",
       "nodejs::nodejs",
       "ruby_build::default",
-      "ruby_rbenv::system"
+      "ruby_rbenv::system",
+      "redisio::default",
+      "redisio::enable"
     ],
     "roles": [
       "system"
@@ -2908,6 +3065,9 @@
       "ruby_rbenv": {
         "version": "1.0.1"
       },
+      "redisio": {
+        "version": "2.4.0"
+      },
       "build-essential": {
         "version": "2.3.1"
       },
@@ -2928,6 +3088,9 @@
       },
       "homebrew": {
         "version": "2.0.5"
+      },
+      "ulimit": {
+        "version": "0.3.3"
       },
       "7-zip": {
         "version": "1.0.2"

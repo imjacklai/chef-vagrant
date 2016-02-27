@@ -41,6 +41,9 @@
           {"name": "bundler"}
         ]
       }
+    },
+    "redisio": {
+      "version": "3.0.7"
     }
   },
   "run_list": [
@@ -52,6 +55,8 @@
     "recipe[java]",
     "recipe[nodejs::nodejs]",
     "recipe[ruby_build]",
-    "recipe[ruby_rbenv::system]"
+    "recipe[ruby_rbenv::system]",
+    "recipe[redisio]",
+    "recipe[redisio::enable]"
   ]
 }
