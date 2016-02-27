@@ -297,6 +297,38 @@
         "gpgcheck": true,
         "enabled": true,
         "managed": true
+      },
+      "mysql-connectors-community": {
+        "repositoryid": "mysql-connectors-community",
+        "gpgkey": "https://raw.githubusercontent.com/chef-cookbooks/yum-mysql-community/master/files/default/mysql_pubkey.asc",
+        "description": "MySQL Connectors Community",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": true
+      },
+      "mysql55-community": {
+        "repositoryid": "mysql55-community",
+        "gpgkey": "https://raw.githubusercontent.com/chef-cookbooks/yum-mysql-community/master/files/default/mysql_pubkey.asc",
+        "description": "MySQL 5.5 Community Server",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": true
+      },
+      "mysql56-community": {
+        "repositoryid": "mysql56-community",
+        "gpgkey": "https://raw.githubusercontent.com/chef-cookbooks/yum-mysql-community/master/files/default/mysql_pubkey.asc",
+        "description": "MySQL 5.6 Community Server",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": true
+      },
+      "mysql57-community": {
+        "repositoryid": "mysql57-community",
+        "gpgkey": "https://raw.githubusercontent.com/chef-cookbooks/yum-mysql-community/master/files/default/mysql_pubkey.asc",
+        "description": "MySQL 5.7 Community Server",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": true
       }
     },
     "yum-epel": {
@@ -886,26 +918,26 @@
         "free": "0kB"
       },
       "total": "2050008",
-      "free": "450156kB",
-      "buffers": "119816kB",
-      "cached": "1168124kB",
-      "active": "817484kB",
-      "inactive": "596692kB",
-      "dirty": "6336kB",
+      "free": "156640kB",
+      "buffers": "91152kB",
+      "cached": "1041136kB",
+      "active": "1132540kB",
+      "inactive": "582780kB",
+      "dirty": "52kB",
       "writeback": "0kB",
-      "anon_pages": "126244kB",
-      "mapped": "13808kB",
-      "slab": "161424kB",
-      "slab_reclaimable": "150128kB",
-      "slab_unreclaim": "11296kB",
-      "page_tables": "3488kB",
+      "anon_pages": "583048kB",
+      "mapped": "21120kB",
+      "slab": "152492kB",
+      "slab_reclaimable": "140996kB",
+      "slab_unreclaim": "11496kB",
+      "page_tables": "4576kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "1025004kB",
-      "committed_as": "242912kB",
+      "committed_as": "981000kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "10384kB",
-      "vmalloc_chunk": "34359722172kB"
+      "vmalloc_chunk": "34359721404kB"
     },
     "kernel": {
       "name": "Linux",
@@ -1345,15 +1377,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "6152942",
-              "packets": "6916",
+              "bytes": "7346200",
+              "packets": "8004",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "6152942",
-              "packets": "6916",
+              "bytes": "7346200",
+              "packets": "8004",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -1363,16 +1395,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "6751499",
-              "packets": "110701",
+              "bytes": "7282905",
+              "packets": "119396",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "322780553",
-              "packets": "328138",
+              "bytes": "349967545",
+              "packets": "355040",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -1381,16 +1413,16 @@
           "eth1": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "2781297",
-              "packets": "10118",
+              "bytes": "3339383",
+              "packets": "12801",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "5830751",
-              "packets": "13224",
+              "bytes": "7055091",
+              "packets": "16656",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -1405,13 +1437,13 @@
     "filesystem": {
       "/dev/sda1": {
         "kb_size": "41251136",
-        "kb_used": "2637148",
-        "kb_available": "36878076",
-        "percent_used": "7%",
+        "kb_used": "3054304",
+        "kb_available": "36460920",
+        "percent_used": "8%",
         "mount": "/",
         "total_inodes": "2621440",
-        "inodes_used": "129653",
-        "inodes_available": "2491787",
+        "inodes_used": "130660",
+        "inodes_available": "2490780",
         "inodes_percent_used": "5%",
         "fs_type": "ext4",
         "mount_options": [
@@ -1453,13 +1485,13 @@
       },
       "tmpfs": {
         "kb_size": "205004",
-        "kb_used": "368",
-        "kb_available": "204636",
+        "kb_used": "372",
+        "kb_available": "204632",
         "percent_used": "1%",
         "mount": "/run",
         "total_inodes": "256251",
-        "inodes_used": "332",
-        "inodes_available": "255919",
+        "inodes_used": "336",
+        "inodes_available": "255915",
         "inodes_percent_used": "1%",
         "fs_type": "tmpfs",
         "mount_options": [
@@ -1472,8 +1504,8 @@
       },
       "vagrant": {
         "kb_size": "243915264",
-        "kb_used": "63358156",
-        "kb_available": "180557108",
+        "kb_used": "62610820",
+        "kb_available": "181304444",
         "percent_used": "26%",
         "mount": "/vagrant",
         "total_inodes": "1000",
@@ -1698,12 +1730,12 @@
       "by_device": {
         "/dev/sda1": {
           "kb_size": "41251136",
-          "kb_used": "2637148",
-          "kb_available": "36878076",
-          "percent_used": "7%",
+          "kb_used": "3054304",
+          "kb_available": "36460920",
+          "percent_used": "8%",
           "total_inodes": "2621440",
-          "inodes_used": "129653",
-          "inodes_available": "2491787",
+          "inodes_used": "130660",
+          "inodes_available": "2490780",
           "inodes_percent_used": "5%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1762,12 +1794,12 @@
         },
         "tmpfs": {
           "kb_size": "205004",
-          "kb_used": "368",
-          "kb_available": "204636",
+          "kb_used": "372",
+          "kb_available": "204632",
           "percent_used": "1%",
           "total_inodes": "256251",
-          "inodes_used": "332",
-          "inodes_available": "255919",
+          "inodes_used": "336",
+          "inodes_available": "255915",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -1783,8 +1815,8 @@
         },
         "vagrant": {
           "kb_size": "243915264",
-          "kb_used": "63358156",
-          "kb_available": "180557108",
+          "kb_used": "62610820",
+          "kb_available": "181304444",
           "percent_used": "26%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1887,12 +1919,12 @@
       "by_mountpoint": {
         "/": {
           "kb_size": "41251136",
-          "kb_used": "2637148",
-          "kb_available": "36878076",
-          "percent_used": "7%",
+          "kb_used": "3054304",
+          "kb_available": "36460920",
+          "percent_used": "8%",
           "total_inodes": "2621440",
-          "inodes_used": "129653",
-          "inodes_available": "2491787",
+          "inodes_used": "130660",
+          "inodes_available": "2490780",
           "inodes_percent_used": "5%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1945,12 +1977,12 @@
         },
         "/run": {
           "kb_size": "205004",
-          "kb_used": "368",
-          "kb_available": "204636",
+          "kb_used": "372",
+          "kb_available": "204632",
           "percent_used": "1%",
           "total_inodes": "256251",
-          "inodes_used": "332",
-          "inodes_available": "255919",
+          "inodes_used": "336",
+          "inodes_available": "255915",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -2028,8 +2060,8 @@
         },
         "/vagrant": {
           "kb_size": "243915264",
-          "kb_used": "63358156",
-          "kb_available": "180557108",
+          "kb_used": "62610820",
+          "kb_available": "181304444",
           "percent_used": "26%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -2147,13 +2179,13 @@
         "/dev/sda1,/": {
           "device": "/dev/sda1",
           "kb_size": "41251136",
-          "kb_used": "2637148",
-          "kb_available": "36878076",
-          "percent_used": "7%",
+          "kb_used": "3054304",
+          "kb_available": "36460920",
+          "percent_used": "8%",
           "mount": "/",
           "total_inodes": "2621440",
-          "inodes_used": "129653",
-          "inodes_available": "2491787",
+          "inodes_used": "130660",
+          "inodes_available": "2490780",
           "inodes_percent_used": "5%",
           "fs_type": "ext4",
           "mount_options": [
@@ -2198,13 +2230,13 @@
         "tmpfs,/run": {
           "device": "tmpfs",
           "kb_size": "205004",
-          "kb_used": "368",
-          "kb_available": "204636",
+          "kb_used": "372",
+          "kb_available": "204632",
           "percent_used": "1%",
           "mount": "/run",
           "total_inodes": "256251",
-          "inodes_used": "332",
-          "inodes_available": "255919",
+          "inodes_used": "336",
+          "inodes_available": "255915",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -2277,8 +2309,8 @@
         "vagrant,/vagrant": {
           "device": "vagrant",
           "kb_size": "243915264",
-          "kb_used": "63358156",
-          "kb_available": "180557108",
+          "kb_used": "62610820",
+          "kb_available": "181304444",
           "percent_used": "26%",
           "mount": "/vagrant",
           "total_inodes": "1000",
@@ -2568,11 +2600,11 @@
         "chef_root": "/opt/chef/embedded/lib/ruby/gems/2.1.0/gems/chef-12.7.2/lib"
       }
     },
-    "ohai_time": 1456555960.022329,
-    "uptime_seconds": 22741,
-    "uptime": "6 hours 19 minutes 01 seconds",
-    "idletime_seconds": 21236,
-    "idletime": "5 hours 53 minutes 56 seconds",
+    "ohai_time": 1456556778.1312823,
+    "uptime_seconds": 23559,
+    "uptime": "6 hours 32 minutes 39 seconds",
+    "idletime_seconds": 22023,
+    "idletime": "6 hours 07 minutes 03 seconds",
     "init_package": "init",
     "cloud_v2": null,
     "command": {
@@ -2793,6 +2825,13 @@
           "uid": 999,
           "shell": "/bin/false",
           "gecos": "Redis service account"
+        },
+        "mysql": {
+          "dir": "/nonexistent",
+          "gid": 114,
+          "uid": 108,
+          "shell": "/bin/false",
+          "gecos": "MySQL Server,,,"
         }
       },
       "group": {
@@ -3138,6 +3177,12 @@
           "members": [
 
           ]
+        },
+        "mysql": {
+          "gid": 114,
+          "members": [
+
+          ]
         }
       }
     },
@@ -3172,6 +3217,8 @@
       "redisio",
       "redisio::default",
       "redisio::enable",
+      "mysql_database",
+      "mysql_database::default",
       "timezone-ii::debian",
       "chef-sugar::default",
       "git::package",
@@ -3203,7 +3250,8 @@
       "ruby_build::default",
       "ruby_rbenv::system",
       "redisio::default",
-      "redisio::enable"
+      "redisio::enable",
+      "mysql_database::default"
     ],
     "roles": [
       "system"
@@ -3245,6 +3293,9 @@
       "redisio": {
         "version": "2.4.0"
       },
+      "mysql_database": {
+        "version": "0.1.0"
+      },
       "chef-sugar": {
         "version": "3.3.0"
       },
@@ -3272,6 +3323,9 @@
       "ulimit": {
         "version": "0.3.3"
       },
+      "mysql": {
+        "version": "6.1.2"
+      },
       "7-zip": {
         "version": "1.0.2"
       },
@@ -3283,6 +3337,15 @@
       },
       "seven_zip": {
         "version": "2.0.0"
+      },
+      "yum-mysql-community": {
+        "version": "0.1.21"
+      },
+      "smf": {
+        "version": "2.2.8"
+      },
+      "rbac": {
+        "version": "1.0.3"
       }
     }
   },

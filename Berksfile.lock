@@ -11,6 +11,9 @@ DEPENDENCIES
   locale
     git: git://github.com/hw-cookbooks/locale.git
     revision: 82b365ba140fe303a5c137aa4a7cc1ad44791bf4
+  mysql
+    git: git://github.com/chef-cookbooks/mysql.git
+    revision: 9bc636a4622b0933f5b55eac0dc4e3e5cb0935cd
   nodejs
     git: git://github.com/redguide/nodejs.git
     revision: ec7d9df5c1a8cff1b10c4c047dc9233b33f24e19
@@ -61,12 +64,16 @@ GRAPH
   java (1.39.0)
     apt (>= 0.0.0)
   locale (1.0.3)
+  mysql (6.1.2)
+    smf (>= 0.0.0)
+    yum-mysql-community (>= 0.0.0)
   nodejs (2.4.5)
     apt (>= 0.0.0)
     ark (>= 0.0.0)
     build-essential (>= 0.0.0)
     homebrew (>= 0.0.0)
     yum-epel (>= 0.0.0)
+  rbac (1.0.3)
   redisio (2.4.0)
     build-essential (>= 0.0.0)
     ulimit (>= 0.1.2)
@@ -76,6 +83,8 @@ GRAPH
     ruby_build (>= 0.0.0)
   seven_zip (2.0.0)
     windows (>= 1.2.2)
+  smf (2.2.8)
+    rbac (>= 1.0.1)
   sudo (2.9.0)
   timezone-ii (0.2.9992)
   ufw (1.0.0)
@@ -87,3 +96,5 @@ GRAPH
   yum (3.10.0)
   yum-epel (0.6.5)
     yum (~> 3.2)
+  yum-mysql-community (0.1.21)
+    yum (>= 3.2)

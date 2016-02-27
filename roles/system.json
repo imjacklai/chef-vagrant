@@ -64,6 +64,7 @@
     "recipe[ruby_build]",
     "recipe[ruby_rbenv::system]",
     "recipe[redisio]",
-    "recipe[redisio::enable]"
+    "recipe[redisio::enable]",
+    "recipe[mysql_database]"
   ]
 }
