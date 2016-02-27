@@ -11,6 +11,12 @@ DEPENDENCIES
   nodejs
     git: git://github.com/redguide/nodejs.git
     revision: ec7d9df5c1a8cff1b10c4c047dc9233b33f24e19
+  ruby_build
+    git: git://github.com/fnichol/chef-ruby_build.git
+    revision: 4d3361995a6953076951693eff1b326ab499fe1e
+  ruby_rbenv
+    git: git://github.com/chef-rbenv/ruby_rbenv.git
+    revision: e8efda4649b843c6ef60a8cfe32794d3f52bd612
   sudo
     git: git://github.com/chef-cookbooks/sudo.git
     revision: 001ed2b784faa9c61be0c8a0ec45cfe3e11187ca
@@ -49,6 +55,10 @@ GRAPH
     build-essential (>= 0.0.0)
     homebrew (>= 0.0.0)
     yum-epel (>= 0.0.0)
+  ruby_build (0.8.1)
+  ruby_rbenv (1.0.1)
+    java (> 1.4.0)
+    ruby_build (>= 0.0.0)
   seven_zip (2.0.0)
     windows (>= 1.2.2)
   sudo (2.9.0)

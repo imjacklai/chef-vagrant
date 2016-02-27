@@ -11,7 +11,41 @@
     },
     "tags": [
 
-    ]
+    ],
+    "ruby_build": {
+      "install_pkgs": [
+        "tar",
+        "bash",
+        "curl"
+      ],
+      "install_git_pkgs": [
+        "git-core"
+      ],
+      "install_pkgs_cruby": [
+        "build-essential",
+        "bison",
+        "openssl",
+        "libreadline6",
+        "libreadline6-dev",
+        "zlib1g",
+        "zlib1g-dev",
+        "libssl-dev",
+        "libyaml-dev",
+        "libsqlite3-0",
+        "libsqlite3-dev",
+        "sqlite3",
+        "libxml2-dev",
+        "libxslt1-dev",
+        "autoconf",
+        "libc6-dev",
+        "ssl-cert",
+        "subversion"
+      ],
+      "install_pkgs_jruby": [
+        "make",
+        "g++"
+      ]
+    }
   },
   "default": {
     "locale": {
@@ -547,6 +581,53 @@
       "packages": [
         "nodejs"
       ]
+    },
+    "ruby_build": {
+      "git_url": "https://github.com/sstephenson/ruby-build.git",
+      "git_ref": "master",
+      "default_ruby_base_path": "/usr/local/ruby",
+      "upgrade": "none"
+    },
+    "rbenv": {
+      "git_url": "git://github.com/sstephenson/rbenv.git",
+      "git_ref": "v0.4.0",
+      "upgrade": "none",
+      "plugins": [
+
+      ],
+      "root_path": "/usr/local/rbenv",
+      "vagrant": {
+        "system_chef_solo": "/opt/ruby/bin/chef-solo"
+      },
+      "user_installs": [
+
+      ],
+      "rubies": [
+        "2.2.3"
+      ],
+      "user_rubies": [
+
+      ],
+      "gems": {
+        "2.2.3": [
+          {
+            "name": "bundler"
+          }
+        ]
+      },
+      "user_gems": {
+
+      },
+      "user_plugins": [
+
+      ],
+      "create_profiled": true,
+      "install_pkgs": [
+        "git-core",
+        "grep"
+      ],
+      "user_home_root": "/home",
+      "global": "2.2.3"
     }
   },
   "automatic": {
@@ -554,7 +635,7 @@
       "c": {
         "gcc": {
           "version": "4.8.4",
-          "description": "gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04) "
+          "description": "gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.1) "
         }
       },
       "python": {
@@ -575,6 +656,9 @@
           "name": "Java HotSpot(TM) 64-Bit Server VM",
           "build": "24.75-b04, mixed mode"
         }
+      },
+      "nodejs": {
+        "version": "4.3.1"
       },
       "ruby": {
         "platform": "x86_64-linux",
@@ -601,23 +685,23 @@
         "free": "0kB"
       },
       "total": "2050008kB",
-      "free": "858808kB",
-      "buffers": "36276kB",
-      "cached": "926708kB",
-      "active": "576132kB",
-      "inactive": "505800kB",
-      "dirty": "84kB",
+      "free": "710356kB",
+      "buffers": "76504kB",
+      "cached": "967528kB",
+      "active": "527560kB",
+      "inactive": "636808kB",
+      "dirty": "1424kB",
       "writeback": "0kB",
-      "anon_pages": "118944kB",
-      "mapped": "12488kB",
-      "slab": "85900kB",
-      "slab_reclaimable": "76556kB",
-      "slab_unreclaim": "9344kB",
-      "page_tables": "3464kB",
+      "anon_pages": "120304kB",
+      "mapped": "13320kB",
+      "slab": "152620kB",
+      "slab_reclaimable": "141404kB",
+      "slab_unreclaim": "11216kB",
+      "page_tables": "3404kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "1025004kB",
-      "committed_as": "216880kB",
+      "committed_as": "217844kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "10312kB",
       "vmalloc_chunk": "34359722492kB"
@@ -960,15 +1044,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "2716950",
-              "packets": "3620",
+              "bytes": "4510795",
+              "packets": "5468",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "2716950",
-              "packets": "3620",
+              "bytes": "4510795",
+              "packets": "5468",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -978,16 +1062,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "5002733",
-              "packets": "82699",
+              "bytes": "6540028",
+              "packets": "107726",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "223301851",
-              "packets": "230710",
+              "bytes": "311656308",
+              "packets": "317514",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -996,16 +1080,16 @@
           "eth1": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "1259619",
-              "packets": "3911",
+              "bytes": "1960800",
+              "packets": "6597",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "2469309",
-              "packets": "5399",
+              "bytes": "4187600",
+              "packets": "8971",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -1020,14 +1104,14 @@
     "filesystem": {
       "/dev/sda1": {
         "kb_size": "41251136",
-        "kb_used": "1860660",
-        "kb_available": "37654564",
-        "percent_used": "5%",
+        "kb_used": "2484680",
+        "kb_available": "37030544",
+        "percent_used": "7%",
         "mount": "/",
         "total_inodes": "2621440",
-        "inodes_used": "89144",
-        "inodes_available": "2532296",
-        "inodes_percent_used": "4%",
+        "inodes_used": "128625",
+        "inodes_available": "2492815",
+        "inodes_percent_used": "5%",
         "fs_type": "ext4",
         "mount_options": [
           "rw"
@@ -1068,13 +1152,13 @@
       },
       "tmpfs": {
         "kb_size": "205004",
-        "kb_used": "352",
-        "kb_available": "204652",
+        "kb_used": "360",
+        "kb_available": "204644",
         "percent_used": "1%",
         "mount": "/run",
         "total_inodes": "256251",
-        "inodes_used": "325",
-        "inodes_available": "255926",
+        "inodes_used": "327",
+        "inodes_available": "255924",
         "inodes_percent_used": "1%",
         "fs_type": "tmpfs",
         "mount_options": [
@@ -1087,9 +1171,9 @@
       },
       "vagrant": {
         "kb_size": "243915264",
-        "kb_used": "60851632",
-        "kb_available": "183063632",
-        "percent_used": "25%",
+        "kb_used": "63386508",
+        "kb_available": "180528756",
+        "percent_used": "26%",
         "mount": "/vagrant",
         "total_inodes": "1000",
         "inodes_used": "0",
@@ -1313,13 +1397,13 @@
       "by_device": {
         "/dev/sda1": {
           "kb_size": "41251136",
-          "kb_used": "1860660",
-          "kb_available": "37654564",
-          "percent_used": "5%",
+          "kb_used": "2484680",
+          "kb_available": "37030544",
+          "percent_used": "7%",
           "total_inodes": "2621440",
-          "inodes_used": "89144",
-          "inodes_available": "2532296",
-          "inodes_percent_used": "4%",
+          "inodes_used": "128625",
+          "inodes_available": "2492815",
+          "inodes_percent_used": "5%",
           "fs_type": "ext4",
           "mount_options": [
             "rw"
@@ -1377,12 +1461,12 @@
         },
         "tmpfs": {
           "kb_size": "205004",
-          "kb_used": "352",
-          "kb_available": "204652",
+          "kb_used": "360",
+          "kb_available": "204644",
           "percent_used": "1%",
           "total_inodes": "256251",
-          "inodes_used": "325",
-          "inodes_available": "255926",
+          "inodes_used": "327",
+          "inodes_available": "255924",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -1398,9 +1482,9 @@
         },
         "vagrant": {
           "kb_size": "243915264",
-          "kb_used": "60852004",
-          "kb_available": "183063260",
-          "percent_used": "25%",
+          "kb_used": "63386508",
+          "kb_available": "180528756",
+          "percent_used": "26%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -1502,13 +1586,13 @@
       "by_mountpoint": {
         "/": {
           "kb_size": "41251136",
-          "kb_used": "1860660",
-          "kb_available": "37654564",
-          "percent_used": "5%",
+          "kb_used": "2484680",
+          "kb_available": "37030544",
+          "percent_used": "7%",
           "total_inodes": "2621440",
-          "inodes_used": "89144",
-          "inodes_available": "2532296",
-          "inodes_percent_used": "4%",
+          "inodes_used": "128625",
+          "inodes_available": "2492815",
+          "inodes_percent_used": "5%",
           "fs_type": "ext4",
           "mount_options": [
             "rw",
@@ -1560,12 +1644,12 @@
         },
         "/run": {
           "kb_size": "205004",
-          "kb_used": "352",
-          "kb_available": "204652",
+          "kb_used": "360",
+          "kb_available": "204644",
           "percent_used": "1%",
           "total_inodes": "256251",
-          "inodes_used": "325",
-          "inodes_available": "255926",
+          "inodes_used": "327",
+          "inodes_available": "255924",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -1643,9 +1727,9 @@
         },
         "/vagrant": {
           "kb_size": "243915264",
-          "kb_used": "60852004",
-          "kb_available": "183063260",
-          "percent_used": "25%",
+          "kb_used": "63386508",
+          "kb_available": "180528756",
+          "percent_used": "26%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -1762,14 +1846,14 @@
         "/dev/sda1,/": {
           "device": "/dev/sda1",
           "kb_size": "41251136",
-          "kb_used": "1860660",
-          "kb_available": "37654564",
-          "percent_used": "5%",
+          "kb_used": "2484680",
+          "kb_available": "37030544",
+          "percent_used": "7%",
           "mount": "/",
           "total_inodes": "2621440",
-          "inodes_used": "89144",
-          "inodes_available": "2532296",
-          "inodes_percent_used": "4%",
+          "inodes_used": "128625",
+          "inodes_available": "2492815",
+          "inodes_percent_used": "5%",
           "fs_type": "ext4",
           "mount_options": [
             "rw"
@@ -1813,13 +1897,13 @@
         "tmpfs,/run": {
           "device": "tmpfs",
           "kb_size": "205004",
-          "kb_used": "352",
-          "kb_available": "204652",
+          "kb_used": "360",
+          "kb_available": "204644",
           "percent_used": "1%",
           "mount": "/run",
           "total_inodes": "256251",
-          "inodes_used": "325",
-          "inodes_available": "255926",
+          "inodes_used": "327",
+          "inodes_available": "255924",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -1892,9 +1976,9 @@
         "vagrant,/vagrant": {
           "device": "vagrant",
           "kb_size": "243915264",
-          "kb_used": "60852004",
-          "kb_available": "183063260",
-          "percent_used": "25%",
+          "kb_used": "63386508",
+          "kb_available": "180528756",
+          "percent_used": "26%",
           "mount": "/vagrant",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -2183,11 +2267,11 @@
         "chef_root": "/opt/chef/embedded/lib/ruby/gems/2.1.0/gems/chef-12.7.2/lib"
       }
     },
-    "ohai_time": 1456414379.9339201,
-    "uptime_seconds": 3745,
-    "uptime": "1 hours 02 minutes 25 seconds",
-    "idletime_seconds": 3681,
-    "idletime": "1 hours 01 minutes 21 seconds",
+    "ohai_time": 1456547332.3028467,
+    "uptime_seconds": 17240,
+    "uptime": "4 hours 47 minutes 20 seconds",
+    "idletime_seconds": 15867,
+    "idletime": "4 hours 24 minutes 27 seconds",
     "init_package": "init",
     "cloud_v2": null,
     "command": {
@@ -2734,6 +2818,12 @@
           "members": [
             "deployer"
           ]
+        },
+        "ssl-cert": {
+          "gid": 113,
+          "members": [
+
+          ]
         }
       }
     },
@@ -2760,6 +2850,9 @@
       "java",
       "java::default",
       "nodejs::nodejs",
+      "ruby_build",
+      "ruby_build::default",
+      "ruby_rbenv::system",
       "timezone-ii::debian",
       "git::package",
       "java::set_attributes_from_version",
@@ -2769,7 +2862,9 @@
       "nodejs::install",
       "nodejs::nodejs_from_source",
       "build-essential::default",
-      "build-essential::_debian"
+      "build-essential::_debian",
+      "ruby_rbenv::system_install",
+      "ruby_rbenv::default"
     ],
     "expanded_run_list": [
       "locale::default",
@@ -2778,7 +2873,9 @@
       "users::sysadmins",
       "git::default",
       "java::default",
-      "nodejs::nodejs"
+      "nodejs::nodejs",
+      "ruby_build::default",
+      "ruby_rbenv::system"
     ],
     "roles": [
       "system"
@@ -2804,6 +2901,12 @@
       },
       "nodejs": {
         "version": "2.4.5"
+      },
+      "ruby_build": {
+        "version": "0.8.1"
+      },
+      "ruby_rbenv": {
+        "version": "1.0.1"
       },
       "build-essential": {
         "version": "2.3.1"

@@ -32,6 +32,15 @@
       "npm": {
         "install_method": "source"
       }
+    },
+    "rbenv": {
+      "rubies": ["2.2.3"],
+      "global": "2.2.3",
+      "gems": {
+        "2.2.3": [
+          {"name": "bundler"}
+        ]
+      }
     }
   },
   "run_list": [
@@ -41,6 +50,8 @@
     "recipe[users::sysadmins]",
     "recipe[git::default]",
     "recipe[java]",
-    "recipe[nodejs::nodejs]"
+    "recipe[nodejs::nodejs]",
+    "recipe[ruby_build]",
+    "recipe[ruby_rbenv::system]"
   ]
 }
